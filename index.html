@@ -16,15 +16,19 @@
         <aside class="sidebar">
             <div class="sidebar-top">
                 <div class="logo">M<span>✨</span></div>
-                <nav class="nav-links">
-                    <a href="#home" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a>
-                    <a href="#about" class="nav-item"><i class="fa-regular fa-user"></i> About</a>
-                    <a href="#projects" class="nav-item"><i class="fa-regular fa-folder"></i> Projects</a>
-                    <a href="#skills" class="nav-item"><i class="fa-solid fa-code"></i> Skills</a>
-                    <a href="#experience" class="nav-item"><i class="fa-solid fa-briefcase"></i> Experience</a>
-                    <a href="#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Education</a>
-                    <a href="#contact" class="nav-item"><i class="fa-regular fa-envelope"></i> Contact</a>
-                </nav>
+                <!-- Sidebar Navigation Links -->
+<nav class="nav-links">
+    <a href="#home" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a>
+
+    <!-- PURANI WALI ABOUT LINE KO ISSE REPLACE KAREIN -->
+    <a href="javascript:void(0)" class="nav-item" id="about-link"><i class="fa-regular fa-user"></i> About</a>
+
+    <a href="#projects" class="nav-item"><i class="fa-regular fa-folder"></i> Projects</a>
+    <a href="#skills" class="nav-item"><i class="fa-solid fa-code"></i> Skills</a>
+    <a href="#experience" class="nav-item"><i class="fa-solid fa-briefcase"></i> Experience</a>
+    <a href="#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+    <a href="#contact" class="nav-item"><i class="fa-regular fa-envelope"></i> Contact</a>
+</nav>
             </div>
 
             <div class="sidebar-bottom">
@@ -114,7 +118,7 @@
                         <!-- Project 2 -->
                         <div class="project-card">
                             <div class="project-img-box">
-                                <img src="project2.jpg" alt="Student Management System">
+                                <img src="project2.jpg" alt="Daily Fitness Log">
                                 <a href="#" class="external-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                             <h3>Daily Fitness Log</h3>
@@ -130,7 +134,7 @@
                         <!-- Project 3 -->
                         <div class="project-card">
                             <div class="project-img-box">
-                                <img src="project3.jpg" alt="Personal Portfolio">
+                                <img src="project3.jpg" alt="DSA Visualizer">
                                 <a href="#" class="external-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                             <h3>DSA Visualizer</h3>
@@ -152,7 +156,7 @@
                         <div class="tech-grid">
                             <div class="tech-item"><i class="fa-brands fa-python"></i><span>Python</span></div>
                             <div class="tech-item"><i class="fa-brands fa-java"></i><span>Java</span></div>
-                            <div class="tech-item"><span class="c-icon">C++</span><span>C++</span></div>
+                            <div class="tech-item"><span class="c-icon"></span><span>C++</span></div>
                             <div class="tech-item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
                             <div class="tech-item"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
                             <div class="tech-item"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
@@ -191,6 +195,42 @@
 
         </main>
     </div>
+<!-- About Me Pop-up Modal -->
+<div class="modal-overlay" id="about-modal">
+    <div class="modal-card">
+        <button class="modal-close" id="close-about-modal"><i class="fa-solid fa-xmark"></i></button>
+        
+        <div class="modal-header">
+            <span class="badge-greeting"><i class="fa-solid fa-sparkles"></i> About Me</span>
+            <h2>Academic Profile & Journey</h2>
+        </div>
 
+        <div class="modal-body">
+            <!-- Academic Status -->
+            <div class="info-group">
+                <h3 class="modal-heading">Current Academic Status</h3>
+                <p class="modal-text">
+                    I am currently a 6th-semester Software Engineering student at the <strong>University of Gujrat</strong>, passionate about building intelligent systems and software metrics analysis.
+                </p>
+            </div>
+
+            <!-- Future Goals & Research -->
+            <div class="info-group">
+                <h3 class="modal-heading">Research Focus & Aspirations</h3>
+                <p class="modal-text">
+                    My focus lies in real-time machine learning systems, predictive state estimation, and software rejuvenation scheduling. I am actively preparing my portfolio and academic credentials to pursue a Master's degree program under the MEXT Scholarship in Japan for the September 2027 intake, with the ultimate goal of becoming an ML Researcher and University Professor.
+                </p>
+            </div>
+
+            <!-- Key Skills & Coursework -->
+            <div class="info-group">
+                <h3 class="modal-heading">Acquired Skills & Key Coursework</h3>
+                <p class="modal-text">
+                    Throughout my academic journey, I have completed core courses in Object-Oriented Programming (Java), Data Structures & Algorithms, Web Engineering, Database Systems, and Software Engineering Metrics (including Halstead Complexity, Function Point Analysis, and LOC Estimations).
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
