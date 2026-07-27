@@ -708,3 +708,73 @@ body {
     opacity: 1;
     visibility: visible;
 }
+/* ==========================================
+   DARK / LIGHT THEME STYLING & OVERRIDES
+   ========================================== */
+
+/* 1. Theme Button Styling (Top-Right Toggle) */
+.theme-btn {
+    background: rgba(149, 108, 230, 0.12);
+    border: 1px solid rgba(149, 108, 230, 0.25);
+    color: #956CE6;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: #956CE6;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* 2. Dark Theme Global Overrides */
+body.dark-theme {
+    background-color: #0d0a1a !important;
+    color: #e6e4f0 !important;
+}
+
+/* Base Body Background Transition */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 3. Dark Theme Containers, Cards & Sidebar */
+body.dark-theme .sidebar,
+body.dark-theme .hero-card,
+body.dark-theme .tech-card,
+body.dark-theme .project-card,
+body.dark-theme .project-mini-card,
+body.dark-theme .popup-card {
+    background-color: #171329 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 4. Dark Theme Text Colors */
+body.dark-theme h1, 
+body.dark-theme h2, 
+body.dark-theme h3, 
+body.dark-theme h4,
+body.dark-theme strong {
+    color: #ffffff !important;
+}
+
+body.dark-theme p,
+body.dark-theme .lead-text,
+body.dark-theme .nav-item {
+    color: #b8b3d1 !important;
+}
+
+/* Active Nav Link in Dark Mode */
+body.dark-theme .nav-item.active,
+body.dark-theme .nav-item:hover {
+    background: rgba(149, 108, 230, 0.2) !important;
+    color: #956CE6 !important;
+}
