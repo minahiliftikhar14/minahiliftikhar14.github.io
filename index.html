@@ -358,7 +358,7 @@
         </div>
     </div>
 </div>
-<!-- 7. CERTIFICATES POPUP (AB BILKUL INDEPENDENT AUR ALAG HAI) -->
+<!-- 7. CERTIFICATES POPUP -->
 <div id="certificates-popup" class="popup-overlay">
     <div class="popup-card">
         <a href="#" class="popup-close">&times;</a>
@@ -368,37 +368,52 @@
             <div class="project-mini-card">
                 <h4>Google / Coursera Specialization</h4>
                 <p>Issued by: <strong>Google / Coursera</strong></p>
-                <p><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/G35MRL6P6E2B" target="_blank" style="color: #956CE6; font-weight: bold; text-decoration: underline;">Verify Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+                <p>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/G35MRL6P6E2B" 
+                       target="_blank" 
+                       style="color: #956CE6; font-weight: bold; text-decoration: underline;">
+                        Verify Credential <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </p>
             </div>
         </div>
     </div>
 </div>
-    <!-- Script Tag Container -->
-    <script>
+
+<!-- SCRIPT TAG CONTAINER (FAIL-SAFE & ROBUST) -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
 
-        // Check saved theme from localStorage
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
+        if (!themeToggleBtn || !themeIcon) return;
+
+        // 1. Initial State Check from LocalStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
             document.body.classList.add('dark-theme');
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            themeIcon.className = 'fa-solid fa-sun'; // Full class replacement to avoid invisible icon bugs
+        } else {
+            document.body.classList.remove('dark-theme');
+            themeIcon.className = 'fa-regular fa-moon';
         }
 
-        // Toggle Theme on Click
-        themeToggleBtn.addEventListener('click', () => {
+        // 2. Click Event Listener
+        themeToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             document.body.classList.toggle('dark-theme');
             
-            let theme = 'light';
-            if (document.body.classList.contains('dark-theme')) {
-                theme = 'dark';
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            const isDark = document.body.classList.contains('dark-theme');
+
+            if (isDark) {
+                themeIcon.className = 'fa-solid fa-sun';
+                localStorage.setItem('theme', 'dark');
             } else {
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                themeIcon.className = 'fa-regular fa-moon';
+                localStorage.setItem('theme', 'light');
             }
-            
-            localStorage.setItem('theme', theme);
         });
-    </script>
+    });
+</script>
 </body>
 </html>
