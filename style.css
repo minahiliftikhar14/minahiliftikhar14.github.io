@@ -511,3 +511,175 @@ body {
     font-size: 12px;
     color: var(--text-muted);
 }
+/* ===================================================
+   PURE CSS POPUP MODALS (NO JS REQUIRED)
+   =================================================== */
+
+/* Fullscreen Background Overlay with Soft Dark Blur */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 12, 25, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* CSS :target Selector - Activates Popup On Nav Link Click */
+.popup-overlay:target {
+    display: flex;
+    opacity: 1;
+}
+
+/* Main Popup Window Card */
+.popup-card {
+    background: #ffffff;
+    border: 1px solid rgba(149, 108, 230, 0.25);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 650px;
+    max-height: 80vh;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(149, 108, 230, 0.2);
+    display: flex;
+    flex-direction: column;
+    animation: popupFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes popupFadeIn {
+    from {
+        transform: translateY(20px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Modal Title Styling */
+.popup-card h2 {
+    color: #956CE6; /* Signature Soft Purple Accent */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Scrollable Inner Body Container */
+.popup-body {
+    overflow-y: auto;
+    padding-right: 12px;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.popup-body h3 {
+    color: #2c2c2c;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.popup-body .lead-text {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.popup-body hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+
+/* Custom Soft-Purple Scrollbar for Long Content */
+.popup-body::-webkit-scrollbar {
+    width: 6px;
+}
+.popup-body::-webkit-scrollbar-thumb {
+    background: #956CE6;
+    border-radius: 10px;
+}
+.popup-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Close Button (X) */
+.popup-close {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 28px;
+    text-decoration: none;
+    color: #888;
+    line-height: 1;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.popup-close:hover {
+    color: #956CE6;
+    transform: scale(1.15);
+}
+
+/* Inner Project & Education Mini Cards */
+.project-mini-card {
+    background: #fdfbff;
+    border-left: 4px solid #956CE6;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.project-mini-card h4 {
+    margin: 0 0 6px 0;
+    color: #2c2c2c;
+    font-size: 1.05rem;
+}
+
+.project-mini-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #555;
+}
+
+/* Contact Links Styling */
+.contact-links p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN FOR MOBILE & TABLET SCREENS
+   =================================================== */
+@media screen and (max-width: 768px) {
+    .popup-card {
+        width: 92%;
+        max-height: 85vh;
+        padding: 22px 18px;
+    }
+
+    .popup-card h2 {
+        font-size: 1.35rem;
+    }
+
+    .popup-close {
+        top: 15px;
+        right: 18px;
+        font-size: 24px;
+    }
+}
