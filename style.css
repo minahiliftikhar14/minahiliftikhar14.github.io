@@ -778,3 +778,51 @@ body.dark-theme .nav-item:hover {
     background: rgba(149, 108, 230, 0.2) !important;
     color: #956CE6 !important;
 }
+/* ==========================================
+   MOBILE RESPONSIVE STYLES (For Mobile Screens)
+   ========================================== */
+
+@media screen and maximum-width: 768px { /* Note: Standard media query format */
+    /* 1. Main Layout: Flex/Grid ko column mein convert karein */
+    body, 
+    .main-layout, 
+    .container {
+        flex-direction: column !important;
+        padding: 10px !important;
+    }
+
+    /* 2. Sidebar adjustment */
+    .sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 3. Main Content Full Width */
+    .main-content {
+        width: 100% !important;
+    }
+
+    /* 4. Projects & Grid Cards single column */
+    .projects-grid, 
+    .tech-grid,
+    .grid-container {
+        grid-template-columns: 1fr !important; /* Ek line mein ek card */
+        gap: 15px !important;
+    }
+
+    /* 5. Modals / Popups for mobile */
+    .popup-card {
+        width: 90% !important;
+        max-height: 85vh !important;
+        padding: 1.5rem !important;
+        overflow-y: auto !important;
+    }
+
+    /* 6. Header and Theme Button spacing */
+    .top-header {
+        justify-content: space-between !important;
+        padding: 10px 0 !important;
+    }
+}
