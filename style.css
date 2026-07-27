@@ -25,6 +25,7 @@ body {
     background-color: var(--bg-main);
     color: var(--text-dark);
     line-height: 1.5;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .app-container {
@@ -511,11 +512,11 @@ body {
     font-size: 12px;
     color: var(--text-muted);
 }
+
 /* ===================================================
    PURE CSS POPUP MODALS (NO JS REQUIRED)
    =================================================== */
 
-/* Fullscreen Background Overlay with Soft Dark Blur */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -533,13 +534,11 @@ body {
     transition: opacity 0.3s ease;
 }
 
-/* CSS :target Selector - Activates Popup On Nav Link Click */
 .popup-overlay:target {
     display: flex;
     opacity: 1;
 }
 
-/* Main Popup Window Card */
 .popup-card {
     background: #ffffff;
     border: 1px solid rgba(149, 108, 230, 0.25);
@@ -566,9 +565,8 @@ body {
     }
 }
 
-/* Modal Title Styling */
 .popup-card h2 {
-    color: #956CE6; /* Signature Soft Purple Accent */
+    color: #956CE6;
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.6rem;
@@ -577,7 +575,6 @@ body {
     gap: 12px;
 }
 
-/* Scrollable Inner Body Container */
 .popup-body {
     overflow-y: auto;
     padding-right: 12px;
@@ -605,7 +602,6 @@ body {
     margin: 15px 0;
 }
 
-/* Custom Soft-Purple Scrollbar for Long Content */
 .popup-body::-webkit-scrollbar {
     width: 6px;
 }
@@ -618,7 +614,6 @@ body {
     border-radius: 10px;
 }
 
-/* Close Button (X) */
 .popup-close {
     position: absolute;
     top: 18px;
@@ -635,7 +630,6 @@ body {
     transform: scale(1.15);
 }
 
-/* Inner Project & Education Mini Cards */
 .project-mini-card {
     background: #fdfbff;
     border-left: 4px solid #956CE6;
@@ -657,42 +651,18 @@ body {
     color: #555;
 }
 
-/* Contact Links Styling */
 .contact-links p {
     margin: 8px 0;
     font-size: 0.95rem;
 }
-/* ===================================================
-   RESPONSIVE DESIGN FOR MOBILE & TABLET SCREENS
-   =================================================== */
-@media screen and (max-width: 768px) {
-    .popup-card {
-        width: 92%;
-        max-height: 85vh;
-        padding: 22px 18px;
-    }
 
-    .popup-card h2 {
-        font-size: 1.35rem;
-    }
-
-    .popup-close {
-        top: 15px;
-        right: 18px;
-        font-size: 24px;
-    }
-}
-
-/* ==========================================
-   CERTIFICATES POPUP SPECIFIC STYLING
-   ========================================== */
 #certificates-popup {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(15, 12, 29, 0.85); /* Dark Glass Backdrop */
+    background: rgba(15, 12, 29, 0.85);
     backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
@@ -703,16 +673,15 @@ body {
     z-index: 9999;
 }
 
-/* Open Popup state when clicked */
 #certificates-popup:target {
     opacity: 1;
     visibility: visible;
 }
+
 /* ==========================================
-   DARK / LIGHT THEME STYLING & OVERRIDES
+   DARK / LIGHT THEME STYLING
    ========================================== */
 
-/* 1. Theme Button Styling (Top-Right Toggle) */
 .theme-btn {
     background: rgba(149, 108, 230, 0.12);
     border: 1px solid rgba(149, 108, 230, 0.25);
@@ -734,35 +703,30 @@ body {
     transform: scale(1.05);
 }
 
-/* 2. Dark Theme Global Overrides */
 body.dark-theme {
     background-color: #0d0a1a !important;
     color: #e6e4f0 !important;
 }
 
-/* Base Body Background Transition */
-body {
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* 3. Dark Theme Containers, Cards & Sidebar */
 body.dark-theme .sidebar,
 body.dark-theme .hero-card,
 body.dark-theme .tech-card,
 body.dark-theme .project-card,
 body.dark-theme .project-mini-card,
-body.dark-theme .popup-card {
+body.dark-theme .popup-card,
+body.dark-theme .tech-stack-card,
+body.dark-theme .stats-bar {
     background-color: #171329 !important;
     border-color: rgba(255, 255, 255, 0.08) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* 4. Dark Theme Text Colors */
 body.dark-theme h1, 
 body.dark-theme h2, 
 body.dark-theme h3, 
 body.dark-theme h4,
-body.dark-theme strong {
+body.dark-theme strong,
+body.dark-theme .stat-item h4 {
     color: #ffffff !important;
 }
 
@@ -772,57 +736,109 @@ body.dark-theme .nav-item {
     color: #b8b3d1 !important;
 }
 
-/* Active Nav Link in Dark Mode */
 body.dark-theme .nav-item.active,
 body.dark-theme .nav-item:hover {
     background: rgba(149, 108, 230, 0.2) !important;
     color: #956CE6 !important;
 }
+
 /* ==========================================
-   MOBILE RESPONSIVE STYLES (For Mobile Screens)
+   FIXED MOBILE RESPONSIVE STYLES (Max Width 768px)
    ========================================== */
 
-@media screen and maximum-width: 768px { /* Note: Standard media query format */
-    /* 1. Main Layout: Flex/Grid ko column mein convert karein */
-    body, 
-    .main-layout, 
-    .container {
+@media screen and (max-width: 768px) {
+    /* 1. Root Layout Reset */
+    .app-container {
         flex-direction: column !important;
-        padding: 10px !important;
     }
 
-    /* 2. Sidebar adjustment */
+    /* 2. Fix Fixed Sidebar */
     .sidebar {
         width: 100% !important;
-        max-width: 100% !important;
+        height: auto !important;
         position: relative !important;
-        margin-bottom: 20px !important;
+        padding: 20px !important;
+        border-right: none !important;
+        border-bottom: 1px solid var(--border-color);
     }
 
-    /* 3. Main Content Full Width */
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    /* 3. Main Content Margin Override */
     .main-content {
+        margin-left: 0 !important;
         width: 100% !important;
+        padding: 20px 15px !important;
     }
 
-    /* 4. Projects & Grid Cards single column */
-    .projects-grid, 
-    .tech-grid,
-    .grid-container {
-        grid-template-columns: 1fr !important; /* Ek line mein ek card */
-        gap: 15px !important;
+    /* 4. Hero Section Vertical Stack */
+    .hero-section {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
     }
 
-    /* 5. Modals / Popups for mobile */
+    .hero-title {
+        font-size: 38px !important;
+    }
+
+    .arched-image-wrapper {
+        width: 100% !important;
+        max-width: 280px !important;
+        height: 320px !important;
+    }
+
+    .focused-card {
+        position: relative !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        margin-top: 15px;
+    }
+
+    /* 5. Dashboard Grid Single Column */
+    .dashboard-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* 6. Projects & Tech Grids Adjustment */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* 7. Stats Bar Mobile Layout */
+    .stats-bar {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+    }
+
+    .stat-item {
+        border-right: none !important;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+    }
+
+    .stat-item:nth-child(3),
+    .stat-item:nth-child(4) {
+        border-bottom: none;
+    }
+
+    /* 8. Modal Adjustments */
     .popup-card {
-        width: 90% !important;
+        width: 92% !important;
         max-height: 85vh !important;
-        padding: 1.5rem !important;
-        overflow-y: auto !important;
+        padding: 20px !important;
     }
 
-    /* 6. Header and Theme Button spacing */
-    .top-header {
-        justify-content: space-between !important;
-        padding: 10px 0 !important;
+    .popup-close {
+        top: 12px;
+        right: 16px;
+        font-size: 24px;
     }
 }
