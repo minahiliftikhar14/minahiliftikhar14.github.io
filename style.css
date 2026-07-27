@@ -682,3 +682,29 @@ body {
         font-size: 24px;
     }
 }
+
+/* ==========================================
+   CERTIFICATES POPUP SPECIFIC STYLING
+   ========================================== */
+#certificates-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 12, 29, 0.85); /* Dark Glass Backdrop */
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999;
+}
+
+/* Open Popup state when clicked */
+#certificates-popup:target {
+    opacity: 1;
+    visibility: visible;
+}
