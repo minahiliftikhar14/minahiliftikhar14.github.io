@@ -10,6 +10,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Square & Sleek Card Custom Styling -->
+    <style>
+        /* Projects Grid Layout */
+        .projects-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 24px !important;
+        }
+
+        /* Compact & Crisp Project Card */
+        .projects-grid .project-card {
+            border-radius: 10px !important; /* Extremely round corners ko subtle/sleek banane ke liye */
+            padding: 16px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            background: var(--bg-card, #ffffff);
+            border: 1px solid var(--border-color, #e2e8f0);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Perfect Square Image Container for Grid Items */
+        .projects-grid .project-img-box {
+            width: 100% !important;
+            aspect-ratio: 1 / 1 !important; /* Standard Square Aspect Ratio */
+            height: auto !important;
+            max-height: 240px !important;
+            border-radius: 8px !important;
+            overflow: hidden !important;
+            margin-bottom: 14px !important;
+            position: relative !important;
+        }
+
+        .projects-grid .project-img-box img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important; /* Frame mein image stretched nahi dikhegi */
+        }
+    </style>
 </head>
 <body>
 
@@ -68,7 +108,7 @@
 
             <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 30px;">
 
-            <!-- Featured Research Project -->
+            <!-- Featured Research Project (As it is) -->
             <section style="margin-bottom: 40px;">
                 <div class="section-header">
                     <h2><i class="fa-solid fa-microscope icon-purple"></i> Featured Research Project</h2>
@@ -96,13 +136,13 @@
                 </div>
             </section>
 
-            <!-- All Repositories Grid -->
+            <!-- All Repositories Grid (Squarish Proportions) -->
             <section>
                 <div class="section-header">
                     <h2><i class="fa-solid fa-code-branch icon-purple"></i> All Repositories & Academic Works</h2>
                 </div>
 
-                <div class="projects-grid" style="grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <div class="projects-grid">
 
                     <!-- ML & Image Segmentation -->
                     <div class="project-card">
