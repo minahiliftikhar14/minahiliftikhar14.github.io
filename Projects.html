@@ -1,1 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Research Portfolio - Minnahil Iftikhar</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div class="app-container">
+        
+        <!-- Left Sidebar (Same Navigation as Main Site) -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="logo">M<span>+</span></div>
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-house"></i> Home
+                    </a>
+                    <a href="index.html#about-popup" class="nav-item">
+                        <i class="fa-regular fa-user"></i> About
+                    </a>
+                    <a href="projects.html" class="nav-item active">
+                        <i class="fa-solid fa-folder"></i> Projects
+                    </a>
+                    <a href="index.html#cv-popup" class="nav-item">
+                        <i class="fa-regular fa-file-lines"></i> CV
+                    </a>
+                    <a href="#certificates-popup" class="nav-item">
+                        <i class="fa-solid fa-graduation-cap"></i> Education
+                    </a>
+                    <a href="index.html#contact-popup" class="nav-item">
+                        <i class="fa-regular fa-envelope"></i> Contact
+                    </a>
+                </nav>
+            </div>
+
+            <div class="sidebar-bottom">
+                <div class="social-links">
+                    <a href="https://github.com/minahiliftikhar14" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/minahil-iftikhar-857306404" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:minahil.iftikhar14@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Top Header -->
+            <header class="top-header">
+                <div>
+                    <h1 style="font-family: 'Playfair Display', serif; font-size: 32px; color: var(--primary);">Projects & Research Portfolio</h1>
+                    <p style="color: var(--text-muted); font-size: 14px;">Software Engineering & Real-Time ML System Implementations</p>
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle theme-btn" id="theme-toggle" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 30px;">
+
+            <!-- Featured Research Project -->
+            <section style="margin-bottom: 40px;">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-microscope icon-purple"></i> Featured Research Project</h2>
+                </div>
+
+                <div class="project-card" style="display: grid; grid-template-columns: 320px 1fr; gap: 25px; padding: 20px; align-items: center;">
+                    <div class="project-img-box" style="height: 200px; margin-bottom: 0;">
+                        <img src="rejuvenation-preview.jpg" alt="Cost-Optimal Software Rejuvenation">
+                    </div>
+                    <div>
+                        <h3 style="font-size: 18px; margin-bottom: 8px; color: var(--primary);">cost-optimal-software-rejuvenation</h3>
+                        <p style="height: auto; font-size: 13px; line-height: 1.6; margin-bottom: 12px;">
+                            Research prototype simulating predictive state estimation and Markov/Bellman cost-optimal software rejuvenation for real-time ML systems.
+                        </p>
+                        <div class="tags" style="margin-bottom: 15px;">
+                            <span>Python</span>
+                            <span>Markov Chains</span>
+                            <span>Bellman Equation</span>
+                            <span>State Estimation</span>
+                        </div>
+                        <a href="https://github.com/minahiliftikhar14/cost-optimal-software-rejuvenation" target="_blank" class="btn-primary" style="display: inline-flex; font-size: 13px; padding: 8px 18px;">
+                            <i class="fa-brands fa-github"></i> View GitHub Repository
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- All Repositories Grid -->
+            <section>
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-code-branch icon-purple"></i> All Repositories & Academic Works</h2>
+                </div>
+
+                <div class="projects-grid" style="grid-template-columns: repeat(2, 1fr); gap: 20px;">
+
+                    <!-- ML & Image Segmentation -->
+                    <div class="project-card">
+                        <div class="project-img-box">
+                            <img src="ml-segmentation-preview.jpg" alt="ML Algorithms and Image Segmentation">
+                            <a href="https://github.com/minahiliftikhar14/ML-Algorithms-and-Image-Segmentation" target="_blank" class="external-link" title="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                        <h3>ML-Algorithms-and-Image-Segmentation</h3>
+                        <p>Implementations of K-NN Classification, K-Means Clustering, and OpenCV Color Image Segmentation in Python.</p>
+                        <div class="tags">
+                            <span>Jupyter Notebook</span>
+                            <span>OpenCV</span>
+                            <span>K-Means</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+
+                    <!-- Java DSA Visualizer -->
+                    <div class="project-card">
+                        <div class="project-img-box">
+                            <img src="dsa-visualizer-preview.jpg" alt="Java DSA Visualizer">
+                            <a href="https://github.com/minahiliftikhar14/java-dsa-visualizer" target="_blank" class="external-link" title="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                        <h3>java-dsa-visualizer</h3>
+                        <p>An interactive Java Swing GUI dashboard visualizing core Data Structures and Algorithms including Dijkstra's Shortest Path, Binary Search Trees, Stacks, and Queues.</p>
+                        <div class="tags">
+                            <span>Java</span>
+                            <span>Swing/AWT</span>
+                            <span>DSA</span>
+                        </div>
+                    </div>
+
+                    <!-- Daily Fitness Log -->
+                    <div class="project-card">
+                        <div class="project-img-box">
+                            <img src="fitness-log-preview.jpg" alt="Daily Fitness Log">
+                            <a href="https://github.com/minahiliftikhar14/daily-fitness-log" target="_blank" class="external-link" title="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                        <h3>daily-fitness-log</h3>
+                        <p>An interactive web application for tracking daily workouts, exercise logs, and fitness progress using HTML, CSS, and JavaScript.</p>
+                        <div class="tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+
+                    <!-- SE Department Timetable -->
+                    <div class="project-card">
+                        <div class="project-img-box">
+                            <img src="timetable-preview.jpg" alt="SE Department Timetable">
+                            <a href="https://github.com/minahiliftikhar14/se-department-timetable" target="_blank" class="external-link" title="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                        <h3>se-department-timetable</h3>
+                        <p>A clean, responsive web-based timetable application for the Software Engineering Department built with HTML5 and CSS3.</p>
+                        <div class="tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>Responsive</span>
+                        </div>
+                    </div>
+
+                    <!-- Java Glassmorphism Login -->
+                    <div class="project-card">
+                        <div class="project-img-box">
+                            <img src="java-login-preview.jpg" alt="Java Glassmorphism Login">
+                            <a href="https://github.com/minahiliftikhar14/java-glassmorphism-login" target="_blank" class="external-link" title="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                        <h3>java-glassmorphism-login</h3>
+                        <p>A modern, dark-themed Glassmorphism Login UI built in Java Swing & AWT using custom Java 2D graphics without external libraries.</p>
+                        <div class="tags">
+                            <span>Java</span>
+                            <span>OOP</span>
+                            <span>Glassmorphism</span>
+                        </div>
+                    </div>
+
+                    <!-- C++ Rock Paper Scissors -->
+                    <div class="project-card">
+                        <div class="project-img-box">
+                            <img src="cpp-rps-preview.jpg" alt="C++ Rock Paper Scissors">
+                            <a href="https://github.com/minahiliftikhar14/cpp-rock-paper-scissors" target="_blank" class="external-link" title="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                        <h3>cpp-rock-paper-scissors</h3>
+                        <p>A clean, modular C++ implementation of the classic Rock-Paper-Scissors game demonstrating fundamental programming logic.</p>
+                        <div class="tags">
+                            <span>C++</span>
+                            <span>OOP</span>
+                            <span>Game Logic</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
