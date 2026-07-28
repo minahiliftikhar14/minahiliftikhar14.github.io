@@ -49,6 +49,55 @@
             height: 100% !important;
             object-fit: cover !important; /* Frame mein image stretched nahi dikhegi */
         }
+        /* ==========================================
+   DARK THEME OVERRIDES FOR PROJECTS PAGE
+   ========================================== */
+
+body.dark-theme {
+    background-color: #0d0a1a !important;
+    color: #e6e4f0 !important;
+}
+
+/* Base Cards & Elements Dark Mode */
+body.dark-theme .sidebar,
+body.dark-theme .hero-card,
+body.dark-theme .tech-card,
+body.dark-theme .project-card,
+body.dark-theme .featured-card,
+body.dark-theme .repo-card,
+body.dark-theme .project-mini-card,
+body.dark-theme .popup-card,
+body.dark-theme .tech-stack-card,
+body.dark-theme .stats-bar {
+    background-color: #171329 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Headings & Text Highlighting */
+body.dark-theme h1, 
+body.dark-theme h2, 
+body.dark-theme h3, 
+body.dark-theme h4,
+body.dark-theme strong,
+body.dark-theme .stat-item h4,
+body.dark-theme .repo-title {
+    color: #ffffff !important;
+}
+
+body.dark-theme p,
+body.dark-theme .lead-text,
+body.dark-theme .nav-item,
+body.dark-theme .repo-desc {
+    color: #b8b3d1 !important;
+}
+
+/* Active & Hover States */
+body.dark-theme .nav-item.active,
+body.dark-theme .nav-item:hover {
+    background: rgba(149, 108, 230, 0.2) !important;
+    color: #956CE6 !important;
+}
     </style>
 </head>
 <body>
