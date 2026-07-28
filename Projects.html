@@ -22,7 +22,7 @@
 
         /* Compact & Crisp Project Card */
         .projects-grid .project-card {
-            border-radius: 10px !important; /* Extremely round corners ko subtle/sleek banane ke liye */
+            border-radius: 10px !important;
             padding: 16px !important;
             display: flex !important;
             flex-direction: column !important;
@@ -35,7 +35,7 @@
         /* Perfect Square Image Container for Grid Items */
         .projects-grid .project-img-box {
             width: 100% !important;
-            aspect-ratio: 1 / 1 !important; /* Standard Square Aspect Ratio */
+            aspect-ratio: 1 / 1 !important;
             height: auto !important;
             max-height: 240px !important;
             border-radius: 8px !important;
@@ -47,64 +47,64 @@
         .projects-grid .project-img-box img {
             width: 100% !important;
             height: 100% !important;
-            object-fit: cover !important; /* Frame mein image stretched nahi dikhegi */
+            object-fit: cover !important;
         }
+
         /* ==========================================
-   DARK THEME OVERRIDES FOR PROJECTS PAGE
-   ========================================== */
+           DARK THEME OVERRIDES FOR PROJECTS PAGE
+           ========================================== */
+        body.dark-theme {
+            background-color: #0d0a1a !important;
+            color: #e6e4f0 !important;
+        }
 
-body.dark-theme {
-    background-color: #0d0a1a !important;
-    color: #e6e4f0 !important;
-}
+        /* Base Cards & Elements Dark Mode */
+        body.dark-theme .sidebar,
+        body.dark-theme .hero-card,
+        body.dark-theme .tech-card,
+        body.dark-theme .project-card,
+        body.dark-theme .featured-card,
+        body.dark-theme .repo-card,
+        body.dark-theme .project-mini-card,
+        body.dark-theme .popup-card,
+        body.dark-theme .tech-stack-card,
+        body.dark-theme .stats-bar {
+            background-color: #171329 !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+        }
 
-/* Base Cards & Elements Dark Mode */
-body.dark-theme .sidebar,
-body.dark-theme .hero-card,
-body.dark-theme .tech-card,
-body.dark-theme .project-card,
-body.dark-theme .featured-card,
-body.dark-theme .repo-card,
-body.dark-theme .project-mini-card,
-body.dark-theme .popup-card,
-body.dark-theme .tech-stack-card,
-body.dark-theme .stats-bar {
-    background-color: #171329 !important;
-    border-color: rgba(255, 255, 255, 0.08) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
-}
+        /* Headings & Text Highlighting */
+        body.dark-theme h1, 
+        body.dark-theme h2, 
+        body.dark-theme h3, 
+        body.dark-theme h4,
+        body.dark-theme strong,
+        body.dark-theme .stat-item h4,
+        body.dark-theme .repo-title {
+            color: #ffffff !important;
+        }
 
-/* Headings & Text Highlighting */
-body.dark-theme h1, 
-body.dark-theme h2, 
-body.dark-theme h3, 
-body.dark-theme h4,
-body.dark-theme strong,
-body.dark-theme .stat-item h4,
-body.dark-theme .repo-title {
-    color: #ffffff !important;
-}
+        body.dark-theme p,
+        body.dark-theme .lead-text,
+        body.dark-theme .nav-item,
+        body.dark-theme .repo-desc {
+            color: #b8b3d1 !important;
+        }
 
-body.dark-theme p,
-body.dark-theme .lead-text,
-body.dark-theme .nav-item,
-body.dark-theme .repo-desc {
-    color: #b8b3d1 !important;
-}
-
-/* Active & Hover States */
-body.dark-theme .nav-item.active,
-body.dark-theme .nav-item:hover {
-    background: rgba(149, 108, 230, 0.2) !important;
-    color: #956CE6 !important;
-}
+        /* Active & Hover States */
+        body.dark-theme .nav-item.active,
+        body.dark-theme .nav-item:hover {
+            background: rgba(149, 108, 230, 0.2) !important;
+            color: #956CE6 !important;
+        }
     </style>
 </head>
 <body>
 
     <div class="app-container">
         
-        <!-- Left Sidebar (Same Navigation as Main Site) -->
+        <!-- Left Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-top">
                 <div class="logo">M<span>✦</span></div>
@@ -118,7 +118,6 @@ body.dark-theme .nav-item:hover {
                     <a href="projects.html" class="nav-item active">
                         <i class="fa-solid fa-folder"></i> Projects
                     </a>
-                  
                     <a href="#certificates-popup" class="nav-item">
                         <i class="fa-solid fa-graduation-cap"></i> Education
                     </a>
@@ -148,14 +147,14 @@ body.dark-theme .nav-item:hover {
                 </div>
                 <div class="header-actions">
                     <button class="theme-toggle theme-btn" id="theme-toggle" aria-label="Toggle Theme">
-                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-moon" id="theme-icon"></i>
                     </button>
                 </div>
             </header>
 
             <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 30px;">
 
-            <!-- Featured Research Project (As it is) -->
+            <!-- Featured Research Project -->
             <section style="margin-bottom: 40px;">
                 <div class="section-header">
                     <h2><i class="fa-solid fa-microscope icon-purple"></i> Featured Research Project</h2>
@@ -183,7 +182,7 @@ body.dark-theme .nav-item:hover {
                 </div>
             </section>
 
-            <!-- All Repositories Grid (Squarish Proportions) -->
+            <!-- All Repositories Grid -->
             <section>
                 <div class="section-header">
                     <h2><i class="fa-solid fa-code-branch icon-purple"></i> All Repositories & Academic Works</h2>
@@ -299,6 +298,42 @@ body.dark-theme .nav-item:hover {
 
         </main>
     </div>
+
+    <!-- SCRIPT TAG CONTAINER -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+
+            if (!themeToggleBtn || !themeIcon) return;
+
+            // 1. Initial State Check from LocalStorage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeIcon.className = 'fa-solid fa-sun';
+            } else {
+                document.body.classList.remove('dark-theme');
+                themeIcon.className = 'fa-regular fa-moon';
+            }
+
+            // 2. Click Event Listener
+            themeToggleBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.classList.toggle('dark-theme');
+                
+                const isDark = document.body.classList.contains('dark-theme');
+
+                if (isDark) {
+                    themeIcon.className = 'fa-solid fa-sun';
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    themeIcon.className = 'fa-regular fa-moon';
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
