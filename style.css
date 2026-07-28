@@ -842,3 +842,139 @@ body.dark-theme .nav-item:hover {
         font-size: 24px;
     }
 }
+/* ==========================================
+   TECH STACK CARD & BRAND COLORS (SS LOOK)
+   ========================================== */
+
+.tech-stack-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid #eef0f6;
+}
+
+.tech-stack-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-stack-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e1b4b;
+}
+
+/* 4-Column Grid Layout */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Hover Animation Effect */
+.tech-item:hover {
+    transform: translateY(-5px);
+}
+
+.tech-item .icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 6px;
+    transition: box-shadow 0.2s ease;
+}
+
+.tech-item span {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+/* --- Brand Specific Colored Backgrounds & Text Colors --- */
+
+/* Python (Soft Blue Tint) */
+.tech-item.python .icon-box {
+    background-color: #f0f7ff;
+    color: #3776ab;
+}
+
+/* Java (Soft Red/Orange Tint) */
+.tech-item.java .icon-box {
+    background-color: #fff5f2;
+    color: #e76f51;
+}
+
+/* C++ (Soft Royal Blue Tint) */
+.tech-item.cpp .icon-box {
+    background-color: #f0f4f9;
+    color: #00599c;
+}
+
+/* JavaScript (Soft Yellow Tint) */
+.tech-item.js .icon-box {
+    background-color: #fffbeb;
+    color: #d97706;
+}
+
+/* HTML (Soft Orange Tint) */
+.tech-item.html .icon-box {
+    background-color: #fff4ed;
+    color: #e44d26;
+}
+
+/* CSS (Soft Blue Tint) */
+.tech-item.css .icon-box {
+    background-color: #f0f9ff;
+    color: #1572b6;
+}
+
+/* MySQL (Soft Teal Tint) */
+.tech-item.mysql .icon-box {
+    background-color: #f0fdfa;
+    color: #00758f;
+}
+
+/* Git & GitHub (Soft Dark/Grey Tint) */
+.tech-item.github .icon-box {
+    background-color: #f8fafc;
+    color: #24292e;
+}
+
+/* ==========================================
+   DARK MODE ADJUSTMENTS FOR BRAND CARDS
+   ========================================== */
+
+body.dark-theme .tech-stack-card {
+    background: #171329 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .tech-item span {
+    color: #b8b3d1 !important;
+}
+
+/* Dark mode mein soft transparent glows */
+body.dark-theme .tech-item.python .icon-box { background: rgba(55, 118, 171, 0.2); color: #60a5fa; }
+body.dark-theme .tech-item.java .icon-box   { background: rgba(231, 111, 81, 0.2); color: #f87171; }
+body.dark-theme .tech-item.cpp .icon-box    { background: rgba(0, 89, 156, 0.25); color: #38bdf8; }
+body.dark-theme .tech-item.js .icon-box     { background: rgba(217, 119, 6, 0.2); color: #fbbf24; }
+body.dark-theme .tech-item.html .icon-box   { background: rgba(228, 77, 38, 0.2); color: #fb923c; }
+body.dark-theme .tech-item.css .icon-box    { background: rgba(21, 114, 182, 0.2); color: #38bdf8; }
+body.dark-theme .tech-item.mysql .icon-box  { background: rgba(0, 117, 143, 0.2); color: #2dd4bf; }
+body.dark-theme .tech-item.github .icon-box { background: rgba(255, 255, 255, 0.1); color: #ffffff; }
