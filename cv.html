@@ -1,1 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Minahil Iftikhar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-card: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --border-color: #e2e8f0;
+            --tag-bg: #f1f5f9;
+            --tag-text: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
 
+        [data-theme="dark"] {
+            --bg-primary: #0f172a;
+            --bg-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #3b82f6;
+            --border-color: #334155;
+            --tag-bg: #334155;
+            --tag-text: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        /* Top Navbar */
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* CV Main Container */
+        .cv-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header Section */
+        .cv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .cv-title h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .cv-title p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-top: 0.2rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-action:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Section Cards */
+        .cv-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--text-primary);
+        }
+
+        .section-title i {
+            color: var(--accent-color);
+        }
+
+        /* Contact Details Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* Education & Items Timeline */
+        .timeline-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .item-sub {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .badge {
+            background-color: var(--tag-bg);
+            color: var(--accent-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Skills Pill Layout */
+        .skills-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .skills-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-group h4 {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .pill {
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 0.35rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Project List */
+        .project-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card h4 {
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0.3rem 0;
+        }
+
+        /* Print Settings */
+        @media print {
+            header, .header-actions {
+                display: none !important;
+            }
+            body {
+                background-color: #fff !important;
+                color: #000 !important;
+            }
+            .cv-section {
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin-bottom: 1.5rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="nav-brand">Minahil Iftikhar</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html" class="active">About / CV</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                        <i class="fa-solid fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="cv-container">
+        
+        <!-- Top Action Bar -->
+        <div class="cv-header">
+            <div class="cv-title">
+                <h1>Minahil Iftikhar</h1>
+                <p>Software Engineering Student | Aspiring ML & SE Developer</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-action" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i> Print
+                </button>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <section class="cv-section">
+            <div class="contact-grid">
+                <div class="contact-item"><i class="fa-solid fa-location-dot"></i> Mandi Bahauddin, Pakistan</div>
+                <div class="contact-item"><i class="fa-solid fa-envelope"></i> minahiliftikhar530@gmail.com</div>
+                <div class="contact-item"><i class="fa-solid fa-phone"></i> +92 321 6088883</div>
+                <div class="contact-item"><i class="fa-brands fa-github"></i> <a href="https://github.com/minahiliftikhar14" target="_blank">github.com/minahiliftikhar14</a></div>
+            </div>
+        </section>
+
+        <!-- Professional Summary -->
+        <section class="cv-section">
+            <h2 class="section-title"><i class="fa-solid fa-user"></i> Professional Summary</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                A dedicated Software Engineering student with a strong academic standing (CGPA: 3.25, Latest SGPA: 3.9). Throughout my coursework, I have gained hands-on expertise in Software Requirement Engineering, SRS & System Documentation, Database Management, and Object-Oriented Design. My technical background spans programming in C++, Java, and Python, alongside web development and Machine Learning fundamentals. I am focused on combining core Software Engineering documentation standards with modern ML workflows to build reliable applications.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section class="cv-section">
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+            
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">BS Software Engineering</span>
+                    <span class="item-date">2023 – Present</span>
+                </div>
+                <div class="item-sub">University of Gujrat, Pakistan</div>
+                <span class="badge">CGPA: 3.25 / 4.00</span>
+                <span class="badge">6th Semester SGPA: 3.90</span>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">Intermediate in Computer Science (ICS)</span>
+                    <span class="item-date">2021 – 2023</span>
+                </div>
+                <div class="item-sub">Rangers Public School and College, Mandi Bahauddin</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <span class="item-title">Matriculation (Science / Computer)</span>
+                    <span class="item-date">2018 – 2020</span>
+                </div>
+                <div class="item-sub">Al-Noor Public Secondary School, Mandi Bahauddin</div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="cv-section">
+            <h2 class="section-title"><i class="fa-solid fa-code"></i> Technical Skills</h2>
+            
+            <div class="skills-group">
+                <h4>Languages</h4>
+                <div class="pills-container">
+                    <span class="pill">C++</span>
+                    <span class="pill">Java</span>
+                    <span class="pill">Python</span>
+                    <span class="pill">JavaScript</span>
+                    <span class="pill">C# (.NET)</span>
+                    <span class="pill">HTML5 & CSS3</span>
+                </div>
+            </div>
+
+            <div class="skills-group">
+                <h4>Machine Learning Fundamentals</h4>
+                <div class="pills-container">
+                    <span class="pill">K-Nearest Neighbors (K-NN)</span>
+                    <span class="pill">K-Means Clustering</span>
+                    <span class="pill">Image Segmentation</span>
+                    <span class="pill">OpenCV</span>
+                </div>
+            </div>
+
+            <div class="skills-group">
+                <h4>Software Engineering Practices</h4>
+                <div class="pills-container">
+                    <span class="pill">Software Requirements & Documentation</span>
+                    <span class="pill">Object-Oriented Programming (OOP)</span>
+                    <span class="pill">Data Structures & Algorithms</span>
+                    <span class="pill">Database Fundamentals (MySQL)</span>
+                </div>
+            </div>
+
+            <div class="skills-group">
+                <h4>Tools & Environments</h4>
+                <div class="pills-container">
+                    <span class="pill">Git & GitHub</span>
+                    <span class="pill">Java Swing / AWT</span>
+                    <span class="pill">Jupyter Notebook</span>
+                    <span class="pill">VS Code</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section class="cv-section">
+            <h2 class="section-title"><i class="fa-solid fa-folder-open"></i> Featured Projects</h2>
+            <div class="project-list">
+                <div class="project-card">
+                    <h4>1. Java DSA Visualizer GUI</h4>
+                    <p>Interactive desktop application for visualizing core data structures (Stacks, Queues, BSTs) and algorithms step-by-step.</p>
+                    <div class="pills-container"><span class="pill">Java</span><span class="pill">Swing</span><span class="pill">AWT</span></div>
+                </div>
+                <div class="project-card">
+                    <h4>2. ML Algorithms & Color Image Segmentation</h4>
+                    <p>Applied K-NN and K-Means clustering techniques for feature extraction and color-based image segmentation.</p>
+                    <div class="pills-container"><span class="pill">Python</span><span class="pill">OpenCV</span><span class="pill">Jupyter</span></div>
+                </div>
+                <div class="project-card">
+                    <h4>3. Java Glassmorphism Desktop Login UI</h4>
+                    <p>Modern translucent desktop interface utilizing custom object-oriented layout design and 2D graphics.</p>
+                    <div class="pills-container"><span class="pill">Java</span><span class="pill">OOP</span><span class="pill">Swing</span></div>
+                </div>
+                <div class="project-card">
+                    <h4>4. Daily Fitness Log</h4>
+                    <p>Responsive web application designed to record and track daily physical exercises and health stats.</p>
+                    <div class="pills-container"><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span></div>
+                </div>
+                <div class="project-card">
+                    <h4>5. SE Department Timetable Application</h4>
+                    <p>Web-based schedule interface providing clean, mobile-friendly viewing of departmental timetables.</p>
+                    <div class="pills-container"><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span></div>
+                </div>
+                <div class="project-card">
+                    <h4>6. C++ Rock Paper Scissors Game</h4>
+                    <p>Terminal-based interactive game implementing core programming logic and conditional control flows.</p>
+                    <div class="pills-container"><span class="pill">C++</span><span class="pill">OOP</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Soft Skills & Interests -->
+        <section class="cv-section">
+            <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Soft Skills & Interests</h2>
+            <div class="skills-group">
+                <h4>Languages</h4>
+                <div class="pills-container">
+                    <span class="pill">English (Fluent)</span>
+                    <span class="pill">Urdu (Fluent)</span>
+                </div>
+            </div>
+            <div class="skills-group" style="margin-top: 1rem;">
+                <h4>Interests & Mentorship</h4>
+                <div class="pills-container">
+                    <span class="pill">Technical Writing & SRS Documentation</span>
+                    <span class="pill">Personal Growth & Mindset Book Reading</span>
+                    <span class="pill">Academic Mentorship</span>
+                    <span class="pill">Exploring Tech Trends</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Theme Switcher JS -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        // Check local storage or system preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            let currentTheme = document.documentElement.getAttribute('data-theme');
+            let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fa-solid fa-sun';
+            } else {
+                themeIcon.className = 'fa-solid fa-moon';
+            }
+        }
+    </script>
+</body>
+</html>
