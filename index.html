@@ -291,34 +291,98 @@
         <a href="#" class="popup-close">&times;</a>
         <h2><i class="fa-regular fa-folder"></i> Featured Projects</h2>
         <div class="popup-body">
-            <div class="project-mini-card">
-                <h4>Software Cost Estimation Model</h4>
-                <p>Mathematical modeling & estimation metrics for software projects.</p>
+            
+            <!-- Project 1 -->
+            <div class="project-mini-card" onclick="toggleProjectDetail(this)">
+                <div class="project-header">
+                    <h4>Software Rejuvenation & Cost Estimation Model</h4>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="project-details">
+                    <p>
+                        Formulated a Markov-chain based mathematical framework utilizing Bellman equations to schedule optimal software rejuvenation times. Designed to minimize operational costs while preventing catastrophic system failure during continuous machine learning pipeline executions.
+                    </p>
+                </div>
             </div>
-            <div class="project-mini-card">
-                <h4>Daily Fitness Log Interface</h4>
-                <p>Web-based dynamic log interface built for tracking activity metrics.</p>
+
+            <!-- Project 2 -->
+            <div class="project-mini-card" onclick="toggleProjectDetail(this)">
+                <div class="project-header">
+                    <h4>Daily Fitness Log Interface</h4>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="project-details">
+                    <p>
+                        A clean, modern web-based log interface designed to track activity metrics and user workouts. Features responsive layouts built with HTML5 and CSS3, laying the foundational UI/UX structure for upcoming mobile application integration.
+                    </p>
+                </div>
             </div>
-            <div class="project-mini-card">
-                <h4>DSA Visualizer</h4>
-                <p>Interactive algorithm and data structure visualizer application.</p>
+
+            <!-- Project 3 -->
+            <div class="project-mini-card" onclick="toggleProjectDetail(this)">
+                <div class="project-header">
+                    <h4>DSA Visualizer</h4>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="project-details">
+                    <p>
+                        An interactive desktop visualizer built with Java Swing and AWT to render core Data Structures and Algorithms in real time. Enables step-by-step graphical execution of searching, sorting, and tree traversals for quick algorithmic analysis.
+                    </p>
+                </div>
             </div>
-            <div class="project-mini-card">
-                <h4>Java Glassmorphism Login</h4>
-                <p>Bsic Login Page With Concept of OOP in java.</p>
+
+            <!-- Project 4 -->
+            <div class="project-mini-card" onclick="toggleProjectDetail(this)">
+                <div class="project-header">
+                    <h4>Java Glassmorphism Login System</h4>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="project-details">
+                    <p>
+                        A modern desktop user authentication interface incorporating Object-Oriented Programming (OOP) principles in Java. Features custom Swing graphics styling to achieve a sleek glassmorphism aesthetic with secure state management.
+                    </p>
+                </div>
             </div>
-            <div class="project-mini-card">
-                <h4>Rock Paper Scissor</h4>
-                <p>Basic game of Rock Paper Scissor using CPP.</p>
+
+            <!-- Project 5 -->
+            <div class="project-mini-card" onclick="toggleProjectDetail(this)">
+                <div class="project-header">
+                    <h4>Rock Paper Scissors Game</h4>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="project-details">
+                    <p>
+                        A foundational C++ console game developed to implement core procedural logic, random state selection, and conditional control structures. Focuses on efficient execution speed and minimal resource allocation.
+                    </p>
+                </div>
             </div>
-            <div class="project-mini-card">
-                <h4>ML ALogortihm and Image Segmentation</h4>
-                <p>Implementation Of Basic ML Concepts./p>
+
+            <!-- Project 6 -->
+            <div class="project-mini-card" onclick="toggleProjectDetail(this)">
+                <div class="project-header">
+                    <h4>ML Algorithms & Image Segmentation</h4>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="project-details">
+                    <p>
+                        Hands-on implementation of core machine learning fundamentals and computer vision concepts in Python. Focuses on predictive model formulation, array processing, and basic image segmentation techniques.
+                    </p>
+                </div>
             </div>
-            <div class="project-mini-card">
-                <h4>Deparmental TimeTable</h4>
-                <p>My Department time table for Spring 2026.</p>
+
+            <!-- Project 7 -->
+            <div class="project-mini-card" onclick="toggleProjectDetail(this)">
+                <div class="project-header">
+                    <h4>Departmental Timetable Web App</h4>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="project-details">
+                    <p>
+                        A structured web application designed for academic scheduling during the Spring 2026 term. Provides a clean grid layout for real-time schedule tracking and quick course location lookup for students and faculty.
+                    </p>
+                </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -501,6 +565,14 @@
             }
         });
     });
+
+    // Toggle function for expandable projects
+    function toggleProjectDetail(card) {
+        card.classList.toggle('active');
+    }
+</script>
+</body>
+</html>
 </script>
 </body>
 </html>
