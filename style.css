@@ -978,3 +978,61 @@ body.dark-theme .tech-item.html .icon-box   { background: rgba(228, 77, 38, 0.2)
 body.dark-theme .tech-item.css .icon-box    { background: rgba(21, 114, 182, 0.2); color: #38bdf8; }
 body.dark-theme .tech-item.mysql .icon-box  { background: rgba(0, 117, 143, 0.2); color: #2dd4bf; }
 body.dark-theme .tech-item.github .icon-box { background: rgba(255, 255, 255, 0.1); color: #ffffff; }
+
+
+/* Project Accordion / Expandable Mini-Cards */
+.project-mini-card {
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.project-mini-card:hover {
+    border-color: #007acc; /* Aap ke theme ka main accent color */
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-header h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.expand-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.project-details p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* Active Open State */
+.project-mini-card.active .project-details {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.project-mini-card.active .expand-icon {
+    transform: rotate(45deg);
+}
