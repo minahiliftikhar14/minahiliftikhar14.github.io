@@ -338,8 +338,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background-color: var(--button-bg);
-            color: var(--button-text);
+            background-color: var(--button-bg) !important;
+            color: #ffffff !important;
             padding: 10px 22px;
             border-radius: 8px;
             text-decoration: none !important;
@@ -348,27 +348,114 @@
             transition: transform 0.2s ease, opacity 0.2s ease;
         }
 
+        .home-btn i,
+        .home-btn span {
+            color: #ffffff !important;
+        }
+
         .home-btn:hover {
             transform: translateY(-2px);
             opacity: 0.9;
         }
 
-        /* Print Settings */
+        /* ==========================================================================
+           PRINT OPTIMIZATION FOR SINGLE-PAGE CV (ENHANCED)
+           ========================================================================== */
         @media print {
-            body {
-                background: none;
-                padding: 0;
+            /* Set page size to A4 and remove browser default margins */
+            @page {
+                size: A4 portrait;
+                margin: 0mm !important;
             }
+
+            /* Reset HTML and Body for full view print */
+            html, body {
+                width: 100% !important;
+                height: 100% !important;
+                background: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Hide top buttons and non-printable elements */
             .top-controls,
             .home-button-container {
                 display: none !important;
             }
+
+            /* Single page layout setup */
             .cv-container {
-                box-shadow: none;
-                max-width: 100%;
-                width: 100%;
-                border: none;
-                border-radius: 0;
+                box-shadow: none !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                height: 100vh !important;
+                min-height: auto !important;
+                border: none !important;
+                border-radius: 0 !important;
+                grid-template-columns: 240px 1fr !important; /* Optimized sidebar width */
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Compact layout for sidebar */
+            .photo-container {
+                height: 210px !important; /* Slightly smaller photo area for vertical space */
+            }
+
+            .sidebar-content {
+                padding: 15px 12px !important;
+            }
+
+            .sidebar-section {
+                margin-bottom: 10px !important;
+                padding-bottom: 10px !important;
+            }
+
+            /* Compact layout for main content area */
+            .main-content {
+                padding: 20px 25px !important;
+                justify-content: flex-start !important;
+            }
+
+            .contact-header {
+                margin-bottom: 12px !important;
+                padding-bottom: 8px !important;
+            }
+
+            .contact-header h1 {
+                font-size: 24px !important;
+            }
+
+            .main-section {
+                margin-bottom: 12px !important;
+            }
+
+            .main-section h2 {
+                font-size: 15px !important;
+                margin-bottom: 8px !important;
+            }
+
+            .main-section p {
+                font-size: 12px !important;
+                margin-bottom: 8px !important;
+            }
+
+            .item {
+                margin-bottom: 6px !important;
+                padding: 6px 10px !important;
+            }
+
+            .bullet-list li {
+                margin-bottom: 4px !important;
+                font-size: 12px !important;
+            }
+
+            /* Strict page-break protection */
+            p, h1, h2, h3, .item, li, .sidebar-section, .main-section {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
             }
         }
     </style>
