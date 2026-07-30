@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minahil Iftikhar - Curriculum Vitae</title>
+    <!-- FontAwesome icons for Theme Toggle and Home Button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-         :root {
+        :root {
             --sidebar-bg: #efebe4;
             --main-bg: #fffdf9;
             --text-brown: #6b5237;
@@ -14,22 +17,67 @@
             --text-muted: #5c534b;
             --border-color: #d1c7b7;
             --link-color: #5a432b;
+            --body-bg: #d8d2c7;
+            --button-bg: #6b5237;
+            --button-text: #ffffff;
         }
-        
+
+        /* ---------------- DARK THEME VARIABLES ---------------- */
+        [data-theme="dark"] {
+            --sidebar-bg: #1e2227;
+            --main-bg: #282c34;
+            --text-brown: #e5c07b;
+            --text-dark: #abb2bf;
+            --text-muted: #98c379;
+            --border-color: #3e4451;
+            --link-color: #61afef;
+            --body-bg: #181a1f;
+            --button-bg: #e5c07b;
+            --button-text: #1e2227;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Georgia', 'Times New Roman', serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
-        
+
         body {
-            background-color: #d8d2c7;
+            background-color: var(--body-bg);
             color: var(--text-dark);
             line-height: 1.5;
             padding: 20px;
+            position: relative;
         }
-        
+
+        /* Top Bar for Floating Buttons */
+        .top-controls {
+            max-width: 850px;
+            margin: 0 auto 10px auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .theme-toggle-btn {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-toggle-btn:hover {
+            opacity: 0.9;
+        }
+
         .cv-container {
             max-width: 850px;
             margin: 0 auto;
@@ -39,16 +87,15 @@
             grid-template-columns: 270px 1fr;
             min-height: 1050px;
         }
+
         /* ---------------- LEFT SIDEBAR ---------------- */
-        
         .sidebar {
             background-color: var(--sidebar-bg);
             border-right: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
         }
-        /* Profile Photo Container */
-        
+
         .photo-container {
             width: 100%;
             height: 280px;
@@ -59,13 +106,13 @@
             border-bottom: 1px solid var(--border-color);
             overflow: hidden;
         }
-        
+
         .photo-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .photo-placeholder {
             color: var(--text-muted);
             font-size: 13px;
@@ -73,23 +120,23 @@
             padding: 20px;
             font-style: italic;
         }
-        
+
         .sidebar-content {
             padding: 25px 20px;
         }
-        
+
         .sidebar-section {
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
             margin-bottom: 20px;
         }
-        
+
         .sidebar-section:last-child {
             border-bottom: none;
             padding-bottom: 0;
             margin-bottom: 0;
         }
-        
+
         .sidebar h1 {
             font-size: 22px;
             text-transform: uppercase;
@@ -99,7 +146,7 @@
             margin-bottom: 12px;
             font-weight: 700;
         }
-        
+
         .sidebar h3 {
             font-size: 15px;
             font-weight: 700;
@@ -107,63 +154,65 @@
             margin-bottom: 12px;
             letter-spacing: 0.5px;
         }
-        
+
         .sidebar p {
             font-size: 12px;
             color: var(--text-muted);
             line-height: 1.5;
         }
-        
+
         .sidebar ul {
             list-style-type: disc;
             padding-left: 18px;
         }
-        
+
         .sidebar li {
             font-size: 12px;
             color: var(--text-muted);
             margin-bottom: 6px;
         }
-        
+
         .sidebar li strong {
             color: var(--text-dark);
             display: block;
             margin-bottom: 2px;
         }
-        
+
         .sidebar a,
         .main-content a {
             color: var(--link-color);
             text-decoration: underline;
         }
-        
+
         .sidebar a:hover,
         .main-content a:hover {
-            color: #000;
+            color: var(--text-brown);
         }
+
         /* ---------------- RIGHT MAIN CONTENT ---------------- */
-        
         .main-content {
             background-color: var(--main-bg);
             padding: 35px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        /* Contact Header */
-        
+
         .contact-header {
             font-size: 12px;
             color: var(--text-muted);
             margin-bottom: 35px;
             line-height: 1.6;
         }
-        
+
         .contact-header div {
             margin-bottom: 3px;
         }
-        
+
         .main-section {
             margin-bottom: 30px;
         }
-        
+
         .main-section h2 {
             font-size: 17px;
             color: var(--text-brown);
@@ -171,53 +220,84 @@
             font-weight: 700;
             letter-spacing: 0.5px;
         }
-        
+
         .main-section p {
             font-size: 12.5px;
             color: var(--text-muted);
             line-height: 1.6;
             margin-bottom: 15px;
         }
-        
+
         .item {
             margin-bottom: 18px;
         }
-        
+
         .item-header {
             font-size: 13px;
             font-weight: 700;
             color: var(--text-dark);
         }
-        
+
         .item-sub {
             font-size: 12px;
             font-weight: 700;
             color: var(--text-brown);
             margin-bottom: 4px;
         }
-        
+
         .item-details {
             font-size: 12px;
             color: var(--text-muted);
             line-height: 1.5;
         }
-        
+
         .bullet-list {
             padding-left: 18px;
             font-size: 12px;
             color: var(--text-muted);
         }
-        
+
         .bullet-list li {
             margin-bottom: 8px;
             line-height: 1.5;
         }
-        /* Print Settings for PDF Conversion */
-        
+
+        /* Bottom Home Button Styling */
+        .home-button-container {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none !important;
+            font-size: 13px;
+            font-weight: bold;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        /* Hide Controls when Printing PDF */
         @media print {
             body {
                 background: none;
                 padding: 0;
+            }
+            .top-controls,
+            .home-button-container {
+                display: none !important;
             }
             .cv-container {
                 box-shadow: none;
@@ -230,27 +310,31 @@
 
 <body>
 
+    <!-- Top Theme Switcher Button -->
+    <div class="top-controls">
+        <button id="theme-toggle" class="theme-toggle-btn">
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
+            <span>SWitch Mode</span>
+        </button>
+    </div>
+
     <div class="cv-container">
 
         <!-- LEFT SIDEBAR -->
         <aside class="sidebar">
-            <!-- Photo Container (Square layout like image template) -->
             <div class="photo-container">
-                <!-- Replace 'your-photo.jpg' with your image path or URL -->
                 <img src="Minahil Passport size.jpeg" alt="Minahil Iftikhar" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <div class="photo-placeholder" style="display:none;">
-                    [ Passport Photo Here ]
+                  
                 </div>
             </div>
 
             <div class="sidebar-content">
-                <!-- Name Section -->
                 <div class="sidebar-section">
                     <h1>About Me</h1>
                     <p>Passionate Software Engineering student at UOG.</p>
                 </div>
 
-                <!-- Technical Skills -->
                 <div class="sidebar-section">
                     <h3>Skills</h3>
                     <ul>
@@ -260,7 +344,6 @@
                     </ul>
                 </div>
 
-                <!-- Educational Background (Sidebar in template) -->
                 <div class="sidebar-section">
                     <h3>Educational Background</h3>
                     <div class="item" style="margin-bottom: 10px;">
@@ -285,7 +368,6 @@
                     </div>
                 </div>
 
-                <!-- Languages -->
                 <div class="sidebar-section">
                     <h3>Languages</h3>
                     <ul>
@@ -300,81 +382,90 @@
         <!-- RIGHT MAIN CONTENT -->
         <main class="main-content">
 
-            <!-- Contact Info Header -->
-            <div class="contact-header">
-                <h1>Minahil Iftikhar</h1>
-                <h3>Software Engineering Student | Aspiring ML Researcher</h3>
-                <div>📍 Mandi Bahauddin, Punjab, Pakistan</div>
-                <div>📞 +92 321 6088883</div>
-                <div>📧 <a href="mailto:minahiliftikhar530@gmail.com">minahiliftikhar530@gmail.com</a></div>
-                <div>💻 GitHub: <a href="https://github.com/minahiliftikhar14" target="_blank">github.com/minahiliftikhar14</a></div>
-                <div>🔗 LinkedIn: <a href="https://linkedin.com/in/minahil-iftikhar" target="_blank">linkedin.com/in/minahil-iftikhar</a></div>
-                <div>🌐 Portfolio: <a href="https://minahiliftikhar14.github.io" target="_blank">minahiliftikhar14.github.io</a></div>
+            <div>
+                <!-- Contact Info Header -->
+                <div class="contact-header">
+                    <h1>Minahil Iftikhar</h1>
+                    <h3>Software Engineering Student | Aspiring ML Researcher</h3>
+                    <div>📍 Mandi Bahauddin, Punjab, Pakistan</div>
+                    <div>📞 +92 321 6088883</div>
+                    <div>📧 <a href="mailto:minahiliftikhar530@gmail.com">minahiliftikhar530@gmail.com</a></div>
+                    <div>💻 GitHub: <a href="https://github.com/minahiliftikhar14" target="_blank">github.com/minahiliftikhar14</a></div>
+                    <div>🔗 LinkedIn: <a href="https://linkedin.com/in/minahil-iftikhar" target="_blank">linkedin.com/in/minahil-iftikhar</a></div>
+                    <div>🌐 Portfolio: <a href="https://minahiliftikhar14.github.io" target="_blank">minahiliftikhar14.github.io</a></div>
+                </div>
+
+                <!-- Professional Summary & Research Interests -->
+                <section class="main-section">
+                    <h2>Professional Summary</h2>
+                    <p>A dedicated Software Engineering student with a strong academic standing (CGPA: 3.25, Latest SGPA: 3.9). Throughout my coursework, I have gained hands-on expertise in Software Requirement Engineering, SRS & System Documentation, Database Management, and Object-Oriented Design. My technical background spans programming in C++, Java, and Python, alongside web development and Machine Learning fundamentals. I am focused on combining core Software Engineering documentation standards with modern ML workflows to build reliable applications.</p>
+
+                    <h2>Research Interests</h2>
+                    <ul class="bullet-list">
+                        <li><strong>ML & System Dependability:</strong> Cost-optimal software rejuvenation scheduling for real-time ML pipelines.</li>
+                        <li><strong>Mathematical Modeling:</strong> Markov Decision Processes (MDP) & Bellman Equations for system state estimation.</li>
+                        <li><strong>Software Architecture:</strong> High-availability web and desktop applications.</li>
+                    </ul>
+                </section>
+
+                <!-- Technical Projects -->
+                <section class="main-section">
+                    <h2>Technical Projects</h2>
+
+                    <div class="item">
+                        <div class="item-header">Cost-Optimal Software Rejuvenation Model</div>
+                        <div class="item-sub">Master's Proposal Project</div>
+                        <div class="item-details">Formulated predictive scheduling using Markov chains and Bellman equations to proactively prevent failure degradation in real-time machine learning pipelines.</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-header">Interactive DSA Visualizer</div>
+                        <div class="item-details">Developed an interactive GUI tool using Java Swing and AWT to dynamically visualize core data structures and algorithm behaviors.</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-header">Departmental Timetable & Fitness Log Interfaces</div>
+                        <div class="item-details">Built structured web application frontends using HTML, CSS, and JavaScript for automated schedule mapping and personal tracking.</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-header">Desktop Authentication & Login System</div>
+                        <div class="item-details">Designed a modular desktop authentication form implementing core Object-Oriented Programming (OOP) concepts in Java.</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-header">ML Algorithm and Image Segmentation</div>
+                        <div class="item-details">Implementations of K-NN Classification, K-Means Clustering, and OpenCV Color Image Segmentation in Python.</div>
+                    </div>
+                </section>
+
+                <!-- Training and Certifications -->
+                <section class="main-section">
+                    <h2>Certifications and Training</h2>
+                    <ul class="bullet-list">
+                        <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/G35MRL6P6E2B" target="_blank">Cybersecurity Specialization</a> (Coursera)</li>
+                        <li><a href="YOUR_COURSERA_UX_LINK_HERE" target="_blank">Google UX Design Specialization</a> (Coursera)</li>
+                    </ul>
+                </section>
             </div>
 
-            <!-- Research Interests -->
-            <section class="main-section">
-                <h2>Professional Summary</h2>
-                <p>A dedicated Software Engineering student with a strong academic standing (CGPA: 3.25, Latest SGPA: 3.9). Throughout my coursework, I have gained hands-on expertise in Software Requirement Engineering, SRS & System Documentation, Database
-                    Management, and Object-Oriented Design. My technical background spans programming in C++, Java, and Python, alongside web development and Machine Learning fundamentals. I am focused on combining core Software Engineering documentation
-                    standards with modern ML workflows to build reliable applications.</p>
-
-                <h2>Research Interests</h2>
-                <ul class="bullet-list">
-                    <li><strong>ML & System Dependability:</strong> Cost-optimal software rejuvenation scheduling for real-time ML pipelines.</li>
-                    <li><strong>Mathematical Modeling:</strong> Markov Decision Processes (MDP) & Bellman Equations for system state estimation.</li>
-                    <li><strong>Software Architecture:</strong> High-availability web and desktop applications.</li>
-                </ul>
-            </section>
-
-            <!-- Technical Projects -->
-            <section class="main-section">
-                <h2>Technical Projects</h2>
-
-                <div class="item">
-                    <div class="item-header">Cost-Optimal Software Rejuvenation Model</div>
-                    <div class="item-sub">Master's Proposal Project</div>
-                    <div class="item-details">Formulated predictive scheduling using Markov chains and Bellman equations to proactively prevent failure degradation in real-time machine learning pipelines.</div>
-                </div>
-
-                <div class="item">
-                    <div class="item-header">Interactive DSA Visualizer</div>
-                    <div class="item-details">Developed an interactive GUI tool using Java Swing and AWT to dynamically visualize core data structures and algorithm behaviors.</div>
-                </div>
-
-                <div class="item">
-                    <div class="item-header">Departmental Timetable & Fitness Log Interfaces</div>
-                    <div class="item-details">Built structured web application frontends using HTML, CSS, and JavaScript for automated schedule mapping and personal tracking.</div>
-                </div>
-
-                <div class="item">
-                    <div class="item-header">Desktop Authentication & Login System</div>
-                    <div class="item-details">Designed a modular desktop authentication form implementing core Object-Oriented Programming (OOP) concepts in Java.</div>
-                </div>
-                <div class="item">
-                    <div class="item-header">ML Algorithm and Image Segmentation</div>
-                    <div class="item-details">Implementations of K-NN Classification, K-Means Clustering, and OpenCV Color Image Segmentation in Python.</div>
-                </div>
-            </section>
-
-            <!-- Training and Certifications -->
-            <section class="main-section">
-                <h2>Certifications and Training</h2>
-                <ul class="bullet-list">
-                    <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/G35MRL6P6E2B" target="_blank">Cybersecurity Specialization</a> (Coursera)</li>
-                    <li><a href="YOUR_COURSERA_UX_LINK_HERE" target="_blank">Google UX Design Specialization</a> (Coursera)</li>
-                </ul>
-            </section>
+            <!-- Home Button at the bottom of the page -->
+            <div class="home-button-container">
+                <a href="index.html" class="home-btn">
+                    <i class="fa-solid fa-house"></i> Go to Home
+                </a>
+            </div>
 
         </main>
 
     </div>
-    <!-- Theme Switcher JS -->
+
+    <!-- Theme Switcher JS Script -->
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
 
-        // Check local storage or system preference
+        // Check saved theme or default to light
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateIcon(savedTheme);
@@ -382,7 +473,7 @@
         themeToggleBtn.addEventListener('click', () => {
             let currentTheme = document.documentElement.getAttribute('data-theme');
             let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
+
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateIcon(newTheme);
@@ -397,4 +488,5 @@
         }
     </script>
 </body>
+
 </html>
