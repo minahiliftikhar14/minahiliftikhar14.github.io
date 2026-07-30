@@ -5,57 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minahil Iftikhar - Curriculum Vitae</title>
-    <!-- FontAwesome icons for Theme Toggle and Home Button -->
+    <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --sidebar-bg: #efebe4;
-            --main-bg: #fffdf9;
-            --text-brown: #6b5237;
-            --text-dark: #3a322b;
-            --text-muted: #5c534b;
-            --border-color: #d1c7b7;
-            --link-color: #5a432b;
-            --body-bg: #d8d2c7;
-            --button-bg: #6b5237;
+            /* LIGHT THEME (Portfolio Palette) */
+            --body-bg: #eef0f8;
+            --sidebar-bg: #f5f4fa;
+            --main-bg: #ffffff;
+            --card-bg: #f6f5fa;
+            --text-dark: #1b162c;
+            --text-purple: #7052be;
+            --text-muted: #5b556e;
+            --border-color: #e2def0;
+            --link-color: #7052be;
+            --button-bg: #7052be;
             --button-text: #ffffff;
+            --accent-purple: #8b5cf6;
         }
 
-        /* ---------------- DARK THEME VARIABLES ---------------- */
+        /* DARK THEME (Portfolio Palette) */
         [data-theme="dark"] {
-            --sidebar-bg: #1e2227;
-            --main-bg: #282c34;
-            --text-brown: #e5c07b;
-            --text-dark: #abb2bf;
-            --text-muted: #98c379;
-            --border-color: #3e4451;
-            --link-color: #61afef;
-            --body-bg: #181a1f;
-            --button-bg: #e5c07b;
-            --button-text: #1e2227;
+            --body-bg: #0c0a15;
+            --sidebar-bg: #141024;
+            --main-bg: #1a162e;
+            --card-bg: #221c3b;
+            --text-dark: #f1edfd;
+            --text-purple: #a78bfa;
+            --text-muted: #b4accb;
+            --border-color: #2e264a;
+            --link-color: #c4b5fd;
+            --button-bg: #8b5cf6;
+            --button-text: #ffffff;
+            --accent-purple: #a78bfa;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         body {
             background-color: var(--body-bg);
             color: var(--text-dark);
-            line-height: 1.5;
+            line-height: 1.6;
             padding: 20px;
             position: relative;
         }
 
-        /* Top Bar for Floating Buttons */
+        /* Top Bar Controls */
         .top-controls {
-            max-width: 850px;
-            margin: 0 auto 10px auto;
+            max-width: 900px;
+            margin: 0 auto 15px auto;
             display: flex;
             justify-content: flex-end;
         }
@@ -64,31 +69,36 @@
             background-color: var(--button-bg);
             color: var(--button-text);
             border: none;
-            padding: 8px 15px;
+            padding: 8px 18px;
             border-radius: 20px;
             cursor: pointer;
             font-size: 14px;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(112, 82, 190, 0.25);
         }
 
         .theme-toggle-btn:hover {
             opacity: 0.9;
+            transform: translateY(-1px);
         }
 
         .cv-container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
             background: var(--main-bg);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             display: grid;
-            grid-template-columns: 270px 1fr;
+            grid-template-columns: 280px 1fr;
             min-height: 1050px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
         }
 
-        /* ---------------- LEFT SIDEBAR ---------------- */
+        /* LEFT SIDEBAR */
         .sidebar {
             background-color: var(--sidebar-bg);
             border-right: 1px solid var(--border-color);
@@ -99,7 +109,7 @@
         .photo-container {
             width: 100%;
             height: 280px;
-            background-color: #ded7cb;
+            background-color: var(--card-bg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -138,38 +148,49 @@
         }
 
         .sidebar h1 {
-            font-size: 22px;
+            font-size: 20px;
             text-transform: uppercase;
-            color: var(--text-brown);
-            letter-spacing: 1.5px;
+            color: var(--text-purple);
+            letter-spacing: 1px;
             line-height: 1.2;
             margin-bottom: 12px;
             font-weight: 700;
         }
 
         .sidebar h3 {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
-            color: var(--text-brown);
+            color: var(--text-purple);
             margin-bottom: 12px;
             letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .sidebar p {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-muted);
-            line-height: 1.5;
         }
 
         .sidebar ul {
-            list-style-type: disc;
-            padding-left: 18px;
+            list-style-type: none;
+            padding-left: 0;
         }
 
         .sidebar li {
-            font-size: 12px;
+            font-size: 12.5px;
             color: var(--text-muted);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 14px;
+        }
+
+        .sidebar li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-purple);
+            font-size: 10px;
+            top: 2px;
         }
 
         .sidebar li strong {
@@ -181,32 +202,52 @@
         .sidebar a,
         .main-content a {
             color: var(--link-color);
-            text-decoration: underline;
+            text-decoration: none;
+            font-weight: 500;
         }
 
         .sidebar a:hover,
         .main-content a:hover {
-            color: var(--text-brown);
+            text-decoration: underline;
         }
 
-        /* ---------------- RIGHT MAIN CONTENT ---------------- */
+        /* RIGHT MAIN CONTENT */
         .main-content {
             background-color: var(--main-bg);
-            padding: 35px 40px;
+            padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .contact-header {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 35px;
-            line-height: 1.6;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .contact-header div {
-            margin-bottom: 3px;
+        .contact-header h1 {
+            font-size: 32px;
+            color: var(--text-dark);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .contact-header h3 {
+            font-size: 15px;
+            color: var(--text-purple);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-size: 12.5px;
         }
 
         .main-section {
@@ -214,55 +255,78 @@
         }
 
         .main-section h2 {
-            font-size: 17px;
-            color: var(--text-brown);
+            font-size: 18px;
+            color: var(--text-purple);
             margin-bottom: 15px;
             font-weight: 700;
-            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .main-section h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-color);
         }
 
         .main-section p {
-            font-size: 12.5px;
+            font-size: 13px;
             color: var(--text-muted);
             line-height: 1.6;
             margin-bottom: 15px;
         }
 
         .item {
-            margin-bottom: 18px;
+            background: var(--card-bg);
+            padding: 14px 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
         }
 
         .item-header {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 700;
             color: var(--text-dark);
         }
 
         .item-sub {
             font-size: 12px;
-            font-weight: 700;
-            color: var(--text-brown);
+            font-weight: 600;
+            color: var(--text-purple);
             margin-bottom: 4px;
         }
 
         .item-details {
-            font-size: 12px;
+            font-size: 12.5px;
             color: var(--text-muted);
             line-height: 1.5;
         }
 
         .bullet-list {
-            padding-left: 18px;
-            font-size: 12px;
-            color: var(--text-muted);
+            padding-left: 0;
+            list-style: none;
         }
 
         .bullet-list li {
-            margin-bottom: 8px;
-            line-height: 1.5;
+            margin-bottom: 10px;
+            font-size: 13px;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 18px;
         }
 
-        /* Bottom Home Button Styling */
+        .bullet-list li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            color: var(--accent-purple);
+            font-weight: bold;
+        }
+
+        /* Home Button Styling */
         .home-button-container {
             margin-top: 20px;
             padding-top: 15px;
@@ -276,11 +340,11 @@
             gap: 8px;
             background-color: var(--button-bg);
             color: var(--button-text);
-            padding: 10px 20px;
-            border-radius: 4px;
+            padding: 10px 22px;
+            border-radius: 8px;
             text-decoration: none !important;
             font-size: 13px;
-            font-weight: bold;
+            font-weight: 600;
             transition: transform 0.2s ease, opacity 0.2s ease;
         }
 
@@ -289,7 +353,7 @@
             opacity: 0.9;
         }
 
-        /* Hide Controls when Printing PDF */
+        /* Print Settings */
         @media print {
             body {
                 background: none;
@@ -303,6 +367,8 @@
                 box-shadow: none;
                 max-width: 100%;
                 width: 100%;
+                border: none;
+                border-radius: 0;
             }
         }
     </style>
@@ -314,7 +380,7 @@
     <div class="top-controls">
         <button id="theme-toggle" class="theme-toggle-btn">
             <i id="theme-icon" class="fa-solid fa-moon"></i>
-            <span>SWitch Mode</span>
+            <span>Change Theme</span>
         </button>
     </div>
 
@@ -325,7 +391,7 @@
             <div class="photo-container">
                 <img src="Minahil Passport size.jpeg" alt="Minahil Iftikhar" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <div class="photo-placeholder" style="display:none;">
-                  
+                    [ Passport Photo Here ]
                 </div>
             </div>
 
@@ -347,23 +413,23 @@
                 <div class="sidebar-section">
                     <h3>Educational Background</h3>
                     <div class="item" style="margin-bottom: 10px;">
-                        <div style="font-size: 12px; font-weight:700; color: var(--text-dark);">University of Gujrat</div>
+                        <div style="font-size: 12.5px; font-weight:700; color: var(--text-dark);">University of Gujrat</div>
                         <div style="font-size: 11.5px; color: var(--text-muted);">BS Software Engineering</div>
-                        <div style="font-size: 11px; color: var(--text-brown);">2023 – Present</div>
+                        <div style="font-size: 11px; color: var(--text-purple);">2023 – Present</div>
                         <div style="font-size: 11px; color: var(--text-muted);">CGPA: 3.25 | SGPA: 3.9</div>
                     </div>
 
                     <div class="item" style="margin-bottom: 10px;">
-                        <div style="font-size: 12px; font-weight:700; color: var(--text-dark);">Rangers Public School</div>
+                        <div style="font-size: 12.5px; font-weight:700; color: var(--text-dark);">Rangers Public School</div>
                         <div style="font-size: 11.5px; color: var(--text-muted);">ICS</div>
-                        <div style="font-size: 11px; color: var(--text-brown);">2021 – 2023</div>
+                        <div style="font-size: 11px; color: var(--text-purple);">2021 – 2023</div>
                         <div style="font-size: 11px; color: var(--text-muted);">Marks: 938 / 1100</div>
                     </div>
 
                     <div class="item">
-                        <div style="font-size: 12px; font-weight:700; color: var(--text-dark);">Al-Noor Public School</div>
+                        <div style="font-size: 12.5px; font-weight:700; color: var(--text-dark);">Al-Noor Public School</div>
                         <div style="font-size: 11.5px; color: var(--text-muted);">Matriculation</div>
-                        <div style="font-size: 11px; color: var(--text-brown);">2020 – 2022</div>
+                        <div style="font-size: 11px; color: var(--text-purple);">2020 – 2022</div>
                         <div style="font-size: 11px; color: var(--text-muted);">Marks: 884 / 1100</div>
                     </div>
                 </div>
@@ -387,12 +453,14 @@
                 <div class="contact-header">
                     <h1>Minahil Iftikhar</h1>
                     <h3>Software Engineering Student | Aspiring ML Researcher</h3>
-                    <div>📍 Mandi Bahauddin, Punjab, Pakistan</div>
-                    <div>📞 +92 321 6088883</div>
-                    <div>📧 <a href="mailto:minahiliftikhar530@gmail.com">minahiliftikhar530@gmail.com</a></div>
-                    <div>💻 GitHub: <a href="https://github.com/minahiliftikhar14" target="_blank">github.com/minahiliftikhar14</a></div>
-                    <div>🔗 LinkedIn: <a href="https://linkedin.com/in/minahil-iftikhar" target="_blank">linkedin.com/in/minahil-iftikhar</a></div>
-                    <div>🌐 Portfolio: <a href="https://minahiliftikhar14.github.io" target="_blank">minahiliftikhar14.github.io</a></div>
+                    <div class="contact-grid">
+                        <div>📍 Mandi Bahauddin, Punjab, Pakistan</div>
+                        <div>📞 +92 321 6088883</div>
+                        <div>📧 <a href="mailto:minahiliftikhar530@gmail.com">minahiliftikhar530@gmail.com</a></div>
+                        <div>💻 <a href="https://github.com/minahiliftikhar14" target="_blank">github.com/minahiliftikhar14</a></div>
+                        <div>🔗 <a href="https://linkedin.com/in/minahil-iftikhar" target="_blank">linkedin.com/in/minahil-iftikhar</a></div>
+                        <div>🌐 <a href="https://minahiliftikhar14.github.io" target="_blank">minahiliftikhar14.github.io</a></div>
+                    </div>
                 </div>
 
                 <!-- Professional Summary & Research Interests -->
@@ -449,7 +517,7 @@
                 </section>
             </div>
 
-            <!-- Home Button at the bottom of the page -->
+            <!-- Home Button -->
             <div class="home-button-container">
                 <a href="index.html" class="home-btn">
                     <i class="fa-solid fa-house"></i> Go to Home
@@ -465,7 +533,6 @@
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
 
-        // Check saved theme or default to light
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateIcon(savedTheme);
