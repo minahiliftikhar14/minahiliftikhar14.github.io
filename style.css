@@ -340,7 +340,7 @@ body {
 }
 
 /* ===================================================
-   PROJECTS GRID (3 CARDS HORIZONTAL FIX)
+   PROJECTS GRID (4 CARDS HORIZONTAL FIX)
    =================================================== */
 .projects-grid {
     display: grid !important;
@@ -453,6 +453,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
     box-shadow: var(--card-shadow);
+    margin-top: 20px !important; /* Yahan gap ke liye margin-top add ho gaya */
 }
 
 .stat-item {
