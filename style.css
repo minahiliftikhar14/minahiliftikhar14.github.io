@@ -417,34 +417,35 @@ body {
     padding: 4px 8px;
     border-radius: 6px;
 }
-
-/* Side Panel */
-.side-panel {
+/* Side Panel / Bottom Layout Fix */
+.side-panel,
+.bottom-section {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px !important; /* Isse har card ke beech automatic 20px ka perfect gap rahega */
+    margin-top: 25px;
 }
 
+/* Tech Stack Card */
+.tech-stack-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 0 !important;
+}
+
+/* Quote Card */
 .quote-card {
     background: linear-gradient(135deg, #A88BEB, #8A65E5);
     color: #FFF;
     padding: 20px;
     border-radius: var(--radius-md);
     position: relative;
+    margin-top: 0 !important; /* Gap ab flex container handle karega */
 }
 
-.quote-icon {
-    font-size: 20px;
-    opacity: 0.6;
-    margin-bottom: 8px;
-}
-
-.quote-card p {
-    font-size: 13px;
-    font-weight: 500;
-}
-
-/* Bottom Stats Bar */
+/* Stats Bar */
 .stats-bar {
     background: var(--bg-card);
     border-radius: var(--radius-md);
@@ -453,7 +454,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
     box-shadow: var(--card-shadow);
-    margin-top: 20px !important; /* Yahan gap ke liye margin-top add ho gaya */
+    margin-top: 0 !important; /* Gap ab flex container handle karega */
 }
 
 .stat-item {
