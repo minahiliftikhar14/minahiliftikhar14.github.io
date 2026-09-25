@@ -339,11 +339,14 @@ body {
     font-weight: 600;
 }
 
-/* Projects Grid */
+/* ===================================================
+   PROJECTS GRID (3 CARDS HORIZONTAL FIX)
+   =================================================== */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 15px;
+    width: 100%;
 }
 
 .project-card {
@@ -351,6 +354,9 @@ body {
     border-radius: var(--radius-md);
     padding: 12px;
     box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-img-box {
@@ -412,56 +418,11 @@ body {
     border-radius: 6px;
 }
 
-/* Tech Stack & Side Panel */
+/* Side Panel */
 .side-panel {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.tech-stack-card {
-    background: var(--bg-card);
-    padding: 20px;
-    border-radius: var(--radius-md);
-    box-shadow: var(--card-shadow);
-}
-
-.tech-stack-card h3 {
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.tech-item {
-    background-color: var(--bg-main);
-    border-radius: var(--radius-sm);
-    padding: 10px 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
-
-.tech-item i {
-    font-size: 20px;
-    color: var(--primary);
-}
-
-.tech-item span {
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--text-muted);
-}
-
-.c-icon {
-    font-weight: 800;
-    font-size: 16px;
-    color: var(--primary);
 }
 
 .quote-card {
@@ -513,10 +474,7 @@ body {
     color: var(--text-muted);
 }
 
-/* ===================================================
-   PURE CSS POPUP MODALS (NO JS REQUIRED)
-   =================================================== */
-
+/* Pure CSS Popup Modals */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -630,27 +588,6 @@ body {
     transform: scale(1.15);
 }
 
-.project-mini-card {
-    background: #fdfbff;
-    border-left: 4px solid #956CE6;
-    border-radius: 6px;
-    padding: 14px 18px;
-    margin-bottom: 14px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-}
-
-.project-mini-card h4 {
-    margin: 0 0 6px 0;
-    color: #2c2c2c;
-    font-size: 1.05rem;
-}
-
-.project-mini-card p {
-    margin: 0;
-    font-size: 0.92rem;
-    color: #555;
-}
-
 .contact-links p {
     margin: 8px 0;
     font-size: 0.95rem;
@@ -678,10 +615,7 @@ body {
     visibility: visible;
 }
 
-/* ==========================================
-   DARK / LIGHT THEME STYLING
-   ========================================== */
-
+/* Dark/Light Theme Styling */
 .theme-btn {
     background: rgba(149, 108, 230, 0.12);
     border: 1px solid rgba(149, 108, 230, 0.25);
@@ -742,17 +676,160 @@ body.dark-theme .nav-item:hover {
     color: #956CE6 !important;
 }
 
-/* ==========================================
-   FIXED MOBILE RESPONSIVE STYLES (Max Width 768px)
-   ========================================== */
+/* Tech Stack Card Styling */
+.tech-stack-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid #eef0f6;
+}
 
+.tech-stack-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-stack-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e1b4b;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+}
+
+.tech-item .icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 6px;
+    transition: box-shadow 0.2s ease;
+}
+
+.tech-item span {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+/* Brand Colors */
+.tech-item.python .icon-box { background-color: #f0f7ff; color: #3776ab; }
+.tech-item.java .icon-box   { background-color: #fff5f2; color: #e76f51; }
+.tech-item.cpp .icon-box    { background-color: #f0f4f9; color: #00599c; }
+.tech-item.js .icon-box     { background-color: #fffbeb; color: #d97706; }
+.tech-item.html .icon-box   { background-color: #fff4ed; color: #e44d26; }
+.tech-item.css .icon-box    { background-color: #f0f9ff; color: #1572b6; }
+.tech-item.mysql .icon-box  { background-color: #f0fdfa; color: #00758f; }
+.tech-item.github .icon-box { background-color: #f8fafc; color: #24292e; }
+
+body.dark-theme .tech-stack-card {
+    background: #171329 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .tech-item span {
+    color: #b8b3d1 !important;
+}
+
+body.dark-theme .tech-item.python .icon-box { background: rgba(55, 118, 171, 0.2); color: #60a5fa; }
+body.dark-theme .tech-item.java .icon-box   { background: rgba(231, 111, 81, 0.2); color: #f87171; }
+body.dark-theme .tech-item.cpp .icon-box    { background: rgba(0, 89, 156, 0.25); color: #38bdf8; }
+body.dark-theme .tech-item.js .icon-box     { background: rgba(217, 119, 6, 0.2); color: #fbbf24; }
+body.dark-theme .tech-item.html .icon-box   { background: rgba(228, 77, 38, 0.2); color: #fb923c; }
+body.dark-theme .tech-item.css .icon-box    { background: rgba(21, 114, 182, 0.2); color: #38bdf8; }
+body.dark-theme .tech-item.mysql .icon-box  { background: rgba(0, 117, 143, 0.2); color: #2dd4bf; }
+body.dark-theme .tech-item.github .icon-box { background: rgba(255, 255, 255, 0.1); color: #ffffff; }
+
+/* Mini Cards & Accordions */
+.project-mini-card {
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    background: #fdfbff;
+    border-left: 4px solid #956CE6;
+}
+
+.project-mini-card:hover {
+    border-color: #956CE6;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #2c2c2c;
+}
+
+.expand-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.project-details p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.project-mini-card.active .project-details {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.project-mini-card.active .expand-icon {
+    transform: rotate(45deg);
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE STYLES (Max Width 768px)
+   ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Root Layout Reset */
     .app-container {
         flex-direction: column !important;
     }
 
-    /* 2. Fix Fixed Sidebar */
     .sidebar {
         width: 100% !important;
         height: auto !important;
@@ -766,14 +843,12 @@ body.dark-theme .nav-item:hover {
         margin-bottom: 20px;
     }
 
-    /* 3. Main Content Margin Override */
     .main-content {
         margin-left: 0 !important;
         width: 100% !important;
         padding: 20px 15px !important;
     }
 
-    /* 4. Hero Section Vertical Stack */
     .hero-section {
         grid-template-columns: 1fr !important;
         gap: 30px !important;
@@ -797,13 +872,11 @@ body.dark-theme .nav-item:hover {
         margin-top: 15px;
     }
 
-    /* 5. Dashboard Grid Single Column */
     .dashboard-grid {
         grid-template-columns: 1fr !important;
         gap: 20px !important;
     }
 
-    /* 6. Projects & Tech Grids Adjustment */
     .projects-grid {
         grid-template-columns: 1fr !important;
     }
@@ -812,7 +885,6 @@ body.dark-theme .nav-item:hover {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    /* 7. Stats Bar Mobile Layout */
     .stats-bar {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px;
@@ -829,7 +901,6 @@ body.dark-theme .nav-item:hover {
         border-bottom: none;
     }
 
-    /* 8. Modal Adjustments */
     .popup-card {
         width: 92% !important;
         max-height: 85vh !important;
@@ -841,198 +912,4 @@ body.dark-theme .nav-item:hover {
         right: 16px;
         font-size: 24px;
     }
-}
-/* ==========================================
-   TECH STACK CARD & BRAND COLORS (SS LOOK)
-   ========================================== */
-
-.tech-stack-card {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 24px;
-    border: 1px solid #eef0f6;
-}
-
-.tech-stack-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
-.tech-stack-header h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #1e1b4b;
-}
-
-/* 4-Column Grid Layout */
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-}
-
-.tech-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-/* Hover Animation Effect */
-.tech-item:hover {
-    transform: translateY(-5px);
-}
-
-.tech-item .icon-box {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    margin-bottom: 6px;
-    transition: box-shadow 0.2s ease;
-}
-
-.tech-item span {
-    font-size: 11px;
-    font-weight: 600;
-    color: #64748b;
-}
-
-/* --- Brand Specific Colored Backgrounds & Text Colors --- */
-
-/* Python (Soft Blue Tint) */
-.tech-item.python .icon-box {
-    background-color: #f0f7ff;
-    color: #3776ab;
-}
-
-/* Java (Soft Red/Orange Tint) */
-.tech-item.java .icon-box {
-    background-color: #fff5f2;
-    color: #e76f51;
-}
-
-/* C++ (Soft Royal Blue Tint) */
-.tech-item.cpp .icon-box {
-    background-color: #f0f4f9;
-    color: #00599c;
-}
-
-/* JavaScript (Soft Yellow Tint) */
-.tech-item.js .icon-box {
-    background-color: #fffbeb;
-    color: #d97706;
-}
-
-/* HTML (Soft Orange Tint) */
-.tech-item.html .icon-box {
-    background-color: #fff4ed;
-    color: #e44d26;
-}
-
-/* CSS (Soft Blue Tint) */
-.tech-item.css .icon-box {
-    background-color: #f0f9ff;
-    color: #1572b6;
-}
-
-/* MySQL (Soft Teal Tint) */
-.tech-item.mysql .icon-box {
-    background-color: #f0fdfa;
-    color: #00758f;
-}
-
-/* Git & GitHub (Soft Dark/Grey Tint) */
-.tech-item.github .icon-box {
-    background-color: #f8fafc;
-    color: #24292e;
-}
-
-/* ==========================================
-   DARK MODE ADJUSTMENTS FOR BRAND CARDS
-   ========================================== */
-
-body.dark-theme .tech-stack-card {
-    background: #171329 !important;
-    border-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-body.dark-theme .tech-item span {
-    color: #b8b3d1 !important;
-}
-
-/* Dark mode mein soft transparent glows */
-body.dark-theme .tech-item.python .icon-box { background: rgba(55, 118, 171, 0.2); color: #60a5fa; }
-body.dark-theme .tech-item.java .icon-box   { background: rgba(231, 111, 81, 0.2); color: #f87171; }
-body.dark-theme .tech-item.cpp .icon-box    { background: rgba(0, 89, 156, 0.25); color: #38bdf8; }
-body.dark-theme .tech-item.js .icon-box     { background: rgba(217, 119, 6, 0.2); color: #fbbf24; }
-body.dark-theme .tech-item.html .icon-box   { background: rgba(228, 77, 38, 0.2); color: #fb923c; }
-body.dark-theme .tech-item.css .icon-box    { background: rgba(21, 114, 182, 0.2); color: #38bdf8; }
-body.dark-theme .tech-item.mysql .icon-box  { background: rgba(0, 117, 143, 0.2); color: #2dd4bf; }
-body.dark-theme .tech-item.github .icon-box { background: rgba(255, 255, 255, 0.1); color: #ffffff; }
-
-
-/* Project Accordion / Expandable Mini-Cards */
-.project-mini-card {
-    cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin-bottom: 10px;
-    transition: all 0.3s ease;
-}
-
-.project-mini-card:hover {
-    border-color: #007acc; /* Aap ke theme ka main accent color */
-    background-color: rgba(255, 255, 255, 0.03);
-}
-
-.project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.project-header h4 {
-    margin: 0;
-    font-size: 1rem;
-}
-
-.expand-icon {
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: transform 0.3s ease;
-}
-
-.project-details {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
-}
-
-.project-details p {
-    margin-top: 10px;
-    margin-bottom: 0;
-    font-size: 0.88rem;
-    line-height: 1.5;
-    color: #ccc;
-}
-
-/* Active Open State */
-.project-mini-card.active .project-details {
-    max-height: 200px;
-    opacity: 1;
-}
-
-.project-mini-card.active .expand-icon {
-    transform: rotate(45deg);
 }
