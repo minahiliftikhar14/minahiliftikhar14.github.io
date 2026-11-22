@@ -32,6 +32,29 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
+        /* Horizontal Featured / Capstone Banner Alignment */
+        .featured-banner-card {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 25px;
+            padding: 20px;
+            align-items: center;
+        }
+
+        .featured-banner-card .project-img-box {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+
+        .featured-banner-card .project-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* Perfect Square Image Container for Grid Items */
         .projects-grid .project-img-box {
             width: 100% !important;
@@ -48,6 +71,19 @@
             width: 100% !important;
             height: 100% !important;
             object-fit: cover !important;
+        }
+
+        /* Responsive Stacking for Banner on Smaller Screens */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .featured-banner-card {
+                grid-template-columns: 1fr;
+            }
+            .featured-banner-card .project-img-box {
+                height: 200px;
+            }
         }
 
         /* ==========================================
@@ -154,43 +190,93 @@
 
             <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 30px;">
 
-           <!-- Featured Research Project (Vision-Guided Precision Docking System) -->
-<section style="margin-bottom: 40px;">
-    <div class="section-header">
-        <h2><i class="fa-solid fa-microscope icon-purple"></i> Featured Research Project</h2>
-    </div>
-
-    <div class="project-card" style="display: grid; grid-template-columns: 320px 1fr; gap: 25px; padding: 20px; align-items: center;">
-        <div class="project-img-box" style="height: 200px; margin-bottom: 0;">
-            <img src="DroneDocking.jpeg" alt="Vision-Guided Precision Docking System">
-        </div>
-        <div>
-            <h3 style="font-size: 18px; margin-bottom: 8px; color: var(--primary);">Vision-Guided Precision Docking System</h3>
-            <p style="height: auto; font-size: 13px; line-height: 1.6; margin-bottom: 12px;">
-                Autonomous Drone Docking via Real-Time Spatial Tracking & Markov Decision Process (MDP) Bellman Oscillation Optimization Engine. Solves spatial drift and high-frequency oscillations in real-time.
-            </p>
-            <div class="tags" style="margin-bottom: 15px;">
-                <span>OpenCV</span>
-                <span>MDP & Bellman</span>
-                <span>Python</span>
-                <span>Streamlit</span>
-                <span>Control Theory</span>
-            </div>
-            <a href="https://github.com/minahiliftikhar14/vision-guided-precision-docking.git" target="_blank" class="btn-primary" style="display: inline-flex; font-size: 13px; padding: 8px 18px;">
-                <i class="fa-brands fa-github"></i> View GitHub Repository
-            </a>
-        </div>
-    </div>
-</section>
-            <!-- All Repositories Grid -->
-            <section>
+            <!-- 1. Featured Research Project (Mountain Vision AI) -->
+            <section style="margin-bottom: 40px;">
                 <div class="section-header">
-                    <h2><i class="fa-solid fa-code-branch icon-purple"></i> All Repositories & Academic Works</h2>
+                    <h2><i class="fa-solid fa-microscope icon-purple"></i> Featured Research Project</h2>
+                </div>
+
+                <div class="project-card featured-banner-card">
+                    <div class="project-img-box">
+                        <img src="MountainVision.jpeg" alt="Mountain Vision AI">
+                    </div>
+                    <div>
+                        <h3 style="font-size: 18px; margin-bottom: 8px; color: var(--primary);">Mountain Vision AI: Synthetic Vision-Guided Autonomous Navigation System</h3>
+                        <p style="height: auto; font-size: 13px; line-height: 1.6; margin-bottom: 12px;">
+                            Engineered a 1000m synthetic mountain road environment in Blender 3D for multimodal driver-POV RGB and trajectory data generation, paired with OpenCV road-curvature extraction (HSV, Gaussian filtering, Canny edge detection) and an MDP Bellman optimality controller for steering, velocity, and gear selection[cite: 6].
+                        </p>
+                        <div class="tags" style="margin-bottom: 15px;">
+                            <span>OpenCV</span>
+                            <span>Blender 3D</span>
+                            <span>MDP & Bellman</span>
+                            <span>Python</span>
+                            <span>NumPy & Pandas</span>
+                        </div>
+                        <a href="https://github.com/minahiliftikhar14/Mountain-Vision-Ai.git" target="_blank" class="btn-primary" style="display: inline-flex; font-size: 13px; padding: 8px 18px;">
+                            <i class="fa-brands fa-github"></i> View GitHub Repository
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Final Year Capstone Project (Truth Tracker) -->
+            <section style="margin-bottom: 40px;">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-graduation-cap icon-purple"></i> Final Year Capstone Project</h2>
+                </div>
+
+                <div class="project-card featured-banner-card">
+                    <div class="project-img-box">
+                        <img src="TruthTracker.jpeg" alt="Truth Tracker RAG Pipeline">
+                    </div>
+                    <div>
+                        <h3 style="font-size: 18px; margin-bottom: 8px; color: var(--primary);">Truth Tracker: RAG-Based Real-Time Fact-Checking Pipeline</h3>
+                        <p style="height: auto; font-size: 13px; line-height: 1.6; margin-bottom: 12px;">
+                            Approved capstone pipeline for real-time fact-checking across English, Urdu, and Roman Urdu using FastAPI, Deep-Translator, and live web/news retrieval[cite: 6]. Combines HuggingFace embeddings (all-MiniLM-L6-v2) in ChromaDB with LangChain and Groq (Llama-3-8B) for structured claim verdicts[cite: 6].
+                        </p>
+                        <div class="tags" style="margin-bottom: 15px;">
+                            <span>FastAPI</span>
+                            <span>LangChain</span>
+                            <span>ChromaDB</span>
+                            <span>Next.js</span>
+                            <span>Groq API</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <a href="https://github.com/minahiliftikhar14/Truth-Tracker-RAG.git" target="_blank" class="btn-primary" style="display: inline-flex; font-size: 13px; padding: 8px 18px;">
+                            <i class="fa-brands fa-github"></i> View GitHub Repository
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Computer Vision & AI Systems Grid -->
+            <section style="margin-bottom: 40px;">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-eye icon-purple"></i> Computer Vision & AI Systems</h2>
                 </div>
 
                 <div class="projects-grid">
 
-                    <!-- 1. Gym Pose Detector -->
+                    <!-- 1. Vision-Guided Precision Docking System -->
+                    <div class="project-card">
+                        <div class="project-img-box">
+                            <img src="DroneDocking.jpeg" alt="Vision-Guided Precision Docking System">
+                            <a href="https://github.com/minahiliftikhar14/vision-guided-precision-docking.git" target="_blank" class="external-link" title="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                        <h3>Vision-Guided Precision Docking System</h3>
+                        <p>Two-layer OpenCV perception pipeline extracting 4D state vectors with a Streamlit HUD and Dynamic Programming MDP/Bellman solver to suppress spatial drift and control flutter[cite: 6].</p>
+                        <div class="tags">
+                            <span>OpenCV</span>
+                            <span>MDP & Bellman</span>
+                            <span>Python</span>
+                            <span>Streamlit</span>
+                            <span>Control Theory</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Gym Pose Detector -->
                     <div class="project-card">
                         <div class="project-img-box">
                             <img src="Gym-Pose-Detector.jpeg" alt="Gym Pose Detector">
@@ -199,7 +285,7 @@
                             </a>
                         </div>
                         <h3>Gym-Pose-Detector-AutoSwitch</h3>
-                        <p>Real-Time Multi-Exercise Analytics, Pose Detection & PostgreSQL Persistence.</p>
+                        <p>Real-time pose estimation using OpenCV and MediaPipe (33 3D landmarks, 3-point joint angles) with an FSM for multi-exercise auto-switching and PostgreSQL logging via psycopg2[cite: 6].</p>
                         <div class="tags">
                             <span>OpenCV</span>
                             <span>MediaPipe</span>
@@ -208,7 +294,7 @@
                         </div>
                     </div>
 
-                    <!-- 2. Cost-Optimal Software Rejuvenation Model -->
+                    <!-- 3. Cost-Optimal Software Rejuvenation Model -->
                     <div class="project-card">
                         <div class="project-img-box">
                             <img src="project1.jpg" alt="Cost-Optimal Software Rejuvenation">
@@ -217,16 +303,16 @@
                             </a>
                         </div>
                         <h3>cost-optimal-software-rejuvenation</h3>
-                        <p>Research prototype simulating predictive state estimation and Markov/Bellman cost-optimal software rejuvenation.</p>
+                        <p>Dual-component engine with a telemetry classifier and Dynamic Programming MDP/Bellman solver (&gamma; = 0.90) paired with a 15-step Streamlit simulator to minimize failure costs[cite: 6].</p>
                         <div class="tags">
                             <span>Python</span>
                             <span>Markov Chains</span>
                             <span>Bellman Equation</span>
-                            <span>State Estimation</span>
+                            <span>Streamlit</span>
                         </div>
                     </div>
 
-                    <!-- 3. ML & Image Segmentation -->
+                    <!-- 4. ML & Image Segmentation -->
                     <div class="project-card">
                         <div class="project-img-box">
                             <img src="ml-segmentation-preview.jpg" alt="ML Algorithms and Image Segmentation">
@@ -235,16 +321,27 @@
                             </a>
                         </div>
                         <h3>ML-Algorithms-and-Image-Segmentation</h3>
-                        <p>Implementations of K-NN Classification, K-Means Clustering, and OpenCV Color Image Segmentation in Python.</p>
+                        <p>Iterative K-Means clustering (K = 20) on RGB pixel arrays for color image segmentation and K-NN classification on feature vectors using OpenCV, Scikit-Learn, and Matplotlib[cite: 6].</p>
                         <div class="tags">
                             <span>Jupyter Notebook</span>
                             <span>OpenCV</span>
                             <span>K-Means</span>
-                            <span>Python</span>
+                            <span>Scikit-Learn</span>
                         </div>
                     </div>
 
-                    <!-- 4. Java DSA Visualizer -->
+                </div>
+            </section>
+
+            <!-- 4. Software Engineering & Academic Works Grid -->
+            <section>
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-code-branch icon-purple"></i> Software Engineering & Academic Works</h2>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- 1. Java DSA Visualizer -->
                     <div class="project-card">
                         <div class="project-img-box">
                             <img src="project3.jpg" alt="Java DSA Visualizer">
@@ -253,7 +350,7 @@
                             </a>
                         </div>
                         <h3>java-dsa-visualizer</h3>
-                        <p>An interactive Java Swing GUI dashboard visualizing core Data Structures and Algorithms including Dijkstra's Shortest Path, Binary Search Trees, Stacks, and Queues.</p>
+                        <p>An interactive Java Swing GUI dashboard visualizing core Data Structures and Algorithms including Dijkstra's Shortest Path, Binary Search Trees, Stacks, and Queues[cite: 9].</p>
                         <div class="tags">
                             <span>Java</span>
                             <span>Swing/AWT</span>
@@ -261,7 +358,7 @@
                         </div>
                     </div>
 
-                    <!-- 5. Daily Fitness Log -->
+                    <!-- 2. Daily Fitness Log -->
                     <div class="project-card">
                         <div class="project-img-box">
                             <img src="project2.jpg" alt="Daily Fitness Log">
@@ -270,7 +367,7 @@
                             </a>
                         </div>
                         <h3>daily-fitness-log</h3>
-                        <p>An interactive web application for tracking daily workouts, exercise logs, and fitness progress using HTML, CSS, and JavaScript.</p>
+                        <p>An interactive web application for tracking daily workouts, exercise logs, and fitness progress using HTML, CSS, and JavaScript[cite: 10].</p>
                         <div class="tags">
                             <span>HTML5</span>
                             <span>CSS3</span>
@@ -278,7 +375,7 @@
                         </div>
                     </div>
 
-                    <!-- 6. SE Department Timetable -->
+                    <!-- 3. SE Department Timetable -->
                     <div class="project-card">
                         <div class="project-img-box">
                             <img src="timetable-preview.jpg" alt="SE Department Timetable">
@@ -287,7 +384,7 @@
                             </a>
                         </div>
                         <h3>se-department-timetable</h3>
-                        <p>A clean, responsive web-based timetable application for the Software Engineering Department built with HTML5 and CSS3.</p>
+                        <p>A clean, responsive web-based timetable application for the Software Engineering Department built with HTML5 and CSS3[cite: 10].</p>
                         <div class="tags">
                             <span>HTML5</span>
                             <span>CSS3</span>
@@ -295,7 +392,7 @@
                         </div>
                     </div>
 
-                    <!-- 7. Java Glassmorphism Login -->
+                    <!-- 4. Java Glassmorphism Login -->
                     <div class="project-card">
                         <div class="project-img-box">
                             <img src="java-login-preview.jpg" alt="Java Glassmorphism Login">
@@ -304,7 +401,7 @@
                             </a>
                         </div>
                         <h3>java-glassmorphism-login</h3>
-                        <p>A modern, dark-themed Glassmorphism Login UI built in Java Swing & AWT using custom Java 2D graphics without external libraries.</p>
+                        <p>A modern, dark-themed Glassmorphism Login UI built in Java Swing & AWT using custom Java 2D graphics without external libraries[cite: 10].</p>
                         <div class="tags">
                             <span>Java</span>
                             <span>OOP</span>
@@ -312,7 +409,7 @@
                         </div>
                     </div>
 
-                    <!-- 8. C++ Rock Paper Scissors -->
+                    <!-- 5. C++ Rock Paper Scissors -->
                     <div class="project-card">
                         <div class="project-img-box">
                             <img src="cpp-rps-preview.jpg" alt="C++ Rock Paper Scissors">
@@ -321,7 +418,7 @@
                             </a>
                         </div>
                         <h3>cpp-rock-paper-scissors</h3>
-                        <p>A clean, modular C++ implementation of the classic Rock-Paper-Scissors game demonstrating fundamental programming logic.</p>
+                        <p>A clean, modular C++ implementation of the classic Rock-Paper-Scissors game demonstrating fundamental programming logic[cite: 10].</p>
                         <div class="tags">
                             <span>C++</span>
                             <span>OOP</span>
