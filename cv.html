@@ -326,6 +326,13 @@
             font-weight: bold;
         }
 
+        .project-link {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 11.5px;
+            font-weight: 600;
+        }
+
         /* Home Button Styling */
         .home-button-container {
             margin-top: 20px;
@@ -362,13 +369,11 @@
            PRINT OPTIMIZATION FOR SINGLE-PAGE CV (ENHANCED)
            ========================================================================== */
         @media print {
-            /* Set page size to A4 and remove browser default margins */
             @page {
                 size: A4 portrait;
                 margin: 0mm !important;
             }
 
-            /* Reset HTML and Body for full view print */
             html, body {
                 width: 100% !important;
                 height: 100% !important;
@@ -379,29 +384,23 @@
                 print-color-adjust: exact !important;
             }
 
-            /* Hide top buttons and non-printable elements */
             .top-controls,
             .home-button-container {
                 display: none !important;
             }
 
-            /* Single page layout setup */
             .cv-container {
                 box-shadow: none !important;
                 max-width: 100% !important;
                 width: 100% !important;
-                height: 100vh !important;
                 min-height: auto !important;
                 border: none !important;
                 border-radius: 0 !important;
-                grid-template-columns: 240px 1fr !important; /* Optimized sidebar width */
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
+                grid-template-columns: 240px 1fr !important;
             }
 
-            /* Compact layout for sidebar */
             .photo-container {
-                height: 210px !important; /* Slightly smaller photo area for vertical space */
+                height: 210px !important;
             }
 
             .sidebar-content {
@@ -413,7 +412,6 @@
                 padding-bottom: 10px !important;
             }
 
-            /* Compact layout for main content area */
             .main-content {
                 padding: 20px 25px !important;
                 justify-content: flex-start !important;
@@ -444,7 +442,7 @@
 
             .item {
                 margin-bottom: 6px !important;
-                padding: 6px 10px !important;
+                padding: 8px 10px !important;
             }
 
             .bullet-list li {
@@ -452,7 +450,6 @@
                 font-size: 12px !important;
             }
 
-            /* Strict page-break protection */
             p, h1, h2, h3, .item, li, .sidebar-section, .main-section {
                 page-break-inside: avoid !important;
                 break-inside: avoid !important;
@@ -484,39 +481,40 @@
 
             <div class="sidebar-content">
                 <div class="sidebar-section">
-                    <h1>About Me</h1>
-                    <p>Passionate Software Engineering student at UOG.</p>
+                    <h1>Profile</h1>
+                    <p>BS Software Engineering undergraduate at University of Gujrat focused on Computer Vision, AI/ML, and mathematical modeling[cite: 12].</p>
                 </div>
 
                 <div class="sidebar-section">
-                    <h3>Skills</h3>
+                    <h3>Technical Skills</h3>
                     <ul>
-                        <li><strong>Programming:</strong> C++, Java, C# (.NET), Python, JavaScript</li>
-                        <li><strong>Web Tech:</strong> HTML, CSS, JavaScript</li>
-                        <li><strong>Core Concepts:</strong> OOP, System Documentation, ML Fundamentals, Predictive Modeling</li>
+                        <li><strong>Programming & Data:</strong> Python, C++, Java, HTML, CSS, JavaScript, NumPy, Pandas[cite: 12]</li>
+                        <li><strong>Vision & Signal Processing:</strong> Computer Vision, OpenCV, MediaPipe, Image Processing & Analysis, Image Segmentation, Pose Estimation[cite: 12]</li>
+                        <li><strong>ML & Mathematical Modeling:</strong> AI, DL, CNN, Markov Decision Processes (MDP), Dynamic Programming, Streamlit, Scikit-Learn[cite: 12]</li>
+                        <li><strong>GenAI, DB & Tools:</strong> LangChain, ChromaDB, RAG, FastAPI, PostgreSQL, Git, GitHub[cite: 12]</li>
                     </ul>
                 </div>
 
                 <div class="sidebar-section">
-                    <h3>Educational Background</h3>
+                    <h3>Education</h3>
                     <div class="item" style="margin-bottom: 10px;">
                         <div style="font-size: 12.5px; font-weight:700; color: var(--text-dark);">University of Gujrat</div>
-                        <div style="font-size: 11.5px; color: var(--text-muted);">BS Software Engineering</div>
-                        <div style="font-size: 11px; color: var(--text-purple);">2023 – Present</div>
-                        <div style="font-size: 11px; color: var(--text-muted);">CGPA: 3.25 | SGPA: 3.9</div>
+                        <div style="font-size: 11.5px; color: var(--text-muted);">BS Software Engineering (EQF Level 6)[cite: 12]</div>
+                        <div style="font-size: 11px; color: var(--text-purple);">02/10/2023 – Current[cite: 12]</div>
+                        <div style="font-size: 11px; color: var(--text-muted);">CGPA: 3.25 / 4.00 (Up to Sem 6) | Latest SGPA: 3.90[cite: 12]</div>
                     </div>
 
                     <div class="item" style="margin-bottom: 10px;">
                         <div style="font-size: 12.5px; font-weight:700; color: var(--text-dark);">Rangers Public School</div>
-                        <div style="font-size: 11.5px; color: var(--text-muted);">ICS</div>
-                        <div style="font-size: 11px; color: var(--text-purple);">2021 – 2023</div>
+                        <div style="font-size: 11.5px; color: var(--text-muted);">ICS (Intermediate in Computer Science)</div>
+                        <div style="font-size: 11px; color: var(--text-purple);">Mandi Bahauddin</div>
                         <div style="font-size: 11px; color: var(--text-muted);">Marks: 938 / 1100</div>
                     </div>
 
                     <div class="item">
                         <div style="font-size: 12.5px; font-weight:700; color: var(--text-dark);">Al-Noor Public School</div>
                         <div style="font-size: 11.5px; color: var(--text-muted);">Matriculation</div>
-                        <div style="font-size: 11px; color: var(--text-purple);">2020 – 2022</div>
+                        <div style="font-size: 11px; color: var(--text-purple);">Mandi Bahauddin</div>
                         <div style="font-size: 11px; color: var(--text-muted);">Marks: 884 / 1100</div>
                     </div>
                 </div>
@@ -524,9 +522,8 @@
                 <div class="sidebar-section">
                     <h3>Languages</h3>
                     <ul>
-                        <li>English (Professional)</li>
-                        <li>Urdu (Native)</li>
-                        <li>Japanese (Basic / Learning)</li>
+                        <li><strong>Urdu:</strong> Mother Tongue</li>
+                        <li><strong>English:</strong> Independent User (B2 — Listening, Reading, Writing, Speaking)</li>
                     </ul>
                 </div>
             </div>
@@ -539,85 +536,106 @@
                 <!-- Contact Info Header -->
                 <div class="contact-header">
                     <h1>Minahil Iftikhar</h1>
-                    <h3>Software Engineering Student | Aspiring ML Researcher</h3>
+                    <h3>Software Engineering Undergraduate | Computer Vision & AI/ML</h3>
                     <div class="contact-grid">
-                        <div>📍 Mandi Bahauddin, Punjab, Pakistan</div>
-                        <div>📞 +92 321 6088883</div>
-                        <div>📧 <a href="mailto:minahiliftikhar530@gmail.com">minahiliftikhar530@gmail.com</a></div>
-                        <div>💻 <a href="https://github.com/minahiliftikhar14" target="_blank">github.com/minahiliftikhar14</a></div>
-                        <div>🔗 <a href="https://linkedin.com/in/minahil-iftikhar" target="_blank">linkedin.com/in/minahil-iftikhar</a></div>
-                        <div>🌐 <a href="https://minahiliftikhar14.github.io" target="_blank">minahiliftikhar14.github.io</a></div>
+                        <div>📍 Mandi Bahauddin, Punjab, Pakistan (50400)[cite: 12]</div>
+                        <div>📞 +92 321 6088883[cite: 12]</div>
+                        <div>📧 <a href="mailto:minahil.iftikhr14@gmail.com">minahil.iftikhr14@gmail.com</a>[cite: 12]</div>
+                        <div>💻 <a href="https://github.com/minahiliftikhar14" target="_blank">github.com/minahiliftikhar14</a>[cite: 12]</div>
+                        <div>🔗 <a href="https://linkedin.com/in/minahil-iftikhar" target="_blank">linkedin.com/in/minahil-iftikhar</a>[cite: 12]</div>
+                        <div>🌐 <a href="https://minahiliftikhar14.github.io" target="_blank">minahiliftikhar14.github.io</a>[cite: 12]</div>
                     </div>
                 </div>
 
-                <!-- Professional Summary & Research Interests -->
+                <!-- About Me & Key Coursework -->
                 <section class="main-section">
-                    <h2>Professional Summary</h2>
-                    <p>A dedicated Software Engineering student with a strong academic standing (CGPA: 3.25, Latest SGPA: 3.9). Throughout my coursework, I have gained hands-on expertise in Software Requirement Engineering, SRS & System Documentation, Database Management, and Object-Oriented Design. My technical background spans programming in C++, Java, and Python, alongside web development and Machine Learning fundamentals. I am focused on combining core Software Engineering documentation standards with modern ML workflows to build reliable applications.</p>
+                    <h2>About Me</h2>
+                    <p>I am a Software Engineering undergraduate at the University of Gujrat with a strong academic foundation and a deep interest in Artificial Intelligence, Machine Learning, and Computer Vision[cite: 12]. My technical background spans Python, C++, Java, and modern ML frameworks, complemented by core software engineering practices such as SRS documentation, database management, and object-oriented design[cite: 12]. Through rigorous coursework, hands-on projects, and self-directed learning, I have developed skills in deep learning, reinforcement learning, and spatial pose tracking[cite: 12]. Driven to combine software engineering standards with cutting-edge AI workflows, I am eager to strengthen my research skills and contribute to innovative solutions through graduate studies and research opportunities[cite: 12].</p>
 
-                    <h2>Research Interests</h2>
-                    <ul class="bullet-list">
-                        <li><strong>ML & System Dependability:</strong> Cost-optimal software rejuvenation scheduling for real-time ML pipelines.</li>
-                        <li><strong>Mathematical Modeling:</strong> Markov Decision Processes (MDP) & Bellman Equations for system state estimation.</li>
-                        <li><strong>Software Architecture:</strong> High-availability web and desktop applications.</li>
-                    </ul>
+                    <h2>Key Coursework</h2>
+                    <p>Calculus and Analytical Geometry, Multivariable Calculus, Linear/Discrete Structures, Data Structures & Algorithms, Object-Oriented Programming (C++/Java), Database Management Systems, Software Requirement Engineering, Probability and Statistics, and Artificial Intelligence[cite: 12].</p>
                 </section>
-                 <!-- Professional Experience -->
+
+                <!-- Professional Experience -->
                 <section class="main-section">
-                    <h2>Professional Experience</h2>
+                    <h2>Experience</h2>
                     <div class="item">
                         <div class="item-header">UI/UX Design & Front-End Development Intern</div>
                         <div class="item-sub">Altegon (Private) Limited | Islamabad, Pakistan (June 2026 – August 2026)</div>
                         <div class="item-details">
                             Contributed to UI/UX wireframing, prototyping, and front-end interface layouts using HTML, CSS, and Python.
-📄 <a href="https://minahiliftikhar14.github.io/internship-letter.pdf" target="_blank" style="font-weight: bold; font-size: 11.5px;">[View Official Internship Completion Letter]</a>
+                            <br><a href="https://minahiliftikhar14.github.io/internship-letter.pdf" target="_blank" class="project-link"><i class="fa-solid fa-file-pdf"></i> View Official Internship Completion Letter</a>
                         </div>
                     </div>
                 </section>
 
                 <!-- Technical Projects -->
                 <section class="main-section">
-                    <h2>Technical Projects</h2>
+                    <h2>Projects</h2>
 
                     <div class="item">
-                        <div class="item-header">Cost-Optimal Software Rejuvenation Model</div>
-                        <div class="item-sub">Master's Proposal Project</div>
-                        <div class="item-details">Formulated predictive scheduling using Markov chains and Bellman equations to proactively prevent failure degradation in real-time machine learning pipelines.</div>
+                        <div class="item-header">Mountain Vision AI: Synthetic Vision-Guided Autonomous Navigation System</div>
+                        <div class="item-sub">Current Research Project | Python, Blender Python API, OpenCV, NumPy, Pandas, Matplotlib, MDP[cite: 13]</div>
+                        <div class="item-details">
+                            Engineered a high-fidelity 1000m synthetic mountain road environment in Blender 3D generating synchronized driver-POV RGB frames and ground-truth (X, Y, Z) trajectory coordinates[cite: 13]. Built OpenCV pipelines (HSV color-space conversion, Gaussian filtering, Canny edge detection) for road curvature metrics and formulated an MDP solver using Bellman Optimality equations for steering angle, velocity, and gear selection[cite: 13].
+                            <br><a href="https://github.com/minahiliftikhar14/Mountain-Vision-Ai.git" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> github.com/minahiliftikhar14/Mountain-Vision-Ai.git</a>[cite: 13]
+                        </div>
                     </div>
 
                     <div class="item">
-                        <div class="item-header">Interactive DSA Visualizer</div>
-                        <div class="item-details">Developed an interactive GUI tool using Java Swing and AWT to dynamically visualize core data structures and algorithm behaviors.</div>
+                        <div class="item-header">Truth Tracker: RAG-Based Real-Time Fact-Checking Pipeline</div>
+                        <div class="item-sub">Current — Approved Capstone Proposal | Python, FastAPI, Next.js, ChromaDB, LangChain, Groq API, PostgreSQL[cite: 13]</div>
+                        <div class="item-details">
+                            Designed a 5-stage RAG pipeline for real-time fact-checking in English, Urdu, and Roman Urdu using FastAPI, Deep-Translator, and dynamic evidence fetching via Google Search/NewsAPI[cite: 13]. Embedded text via HuggingFace <code>all-MiniLM-L6-v2</code> into ChromaDB for cosine similarity search, using LangChain with Groq (Llama-3-8B) for structured verdict generation[cite: 13].
+                            <br><a href="https://github.com/minahiliftikhar14/Truth-Tracker-RAG.git" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> github.com/minahiliftikhar14/Truth-Tracker-RAG.git</a>[cite: 13]
+                        </div>
                     </div>
 
                     <div class="item">
-                        <div class="item-header">Departmental Timetable & Fitness Log Interfaces</div>
-                        <div class="item-details">Built structured web application frontends using HTML, CSS, and JavaScript for automated schedule mapping and personal tracking.</div>
+                        <div class="item-header">Vision-Guided Precision Docking System</div>
+                        <div class="item-sub">Python, OpenCV, NumPy, Matplotlib, Streamlit, Dynamic Programming (MDP/Bellman)[cite: 13]</div>
+                        <div class="item-details">
+                            Engineered a two-layer OpenCV perception pipeline extracting 4D state vectors for real-time target tracking with an interactive Streamlit HUD displaying dynamic drift vector reticles[cite: 13]. Formulated an MDP solver via Dynamic Programming and Bellman equations to optimize dual-penalty reward functions, suppressing spatial drift and control flutter[cite: 13].
+                            <br><a href="https://github.com/minahiliftikhar14/vision-guided-precision-docking.git" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> github.com/minahiliftikhar14/vision-guided-precision-docking.git</a>[cite: 13]
+                        </div>
                     </div>
 
                     <div class="item">
-                        <div class="item-header">Desktop Authentication & Login System</div>
-                        <div class="item-details">Designed a modular desktop authentication form implementing core Object-Oriented Programming (OOP) concepts in Java.</div>
+                        <div class="item-header">Real-Time Multi-Exercise Gym Pose Detector & Database System</div>
+                        <div class="item-sub">Python, OpenCV, MediaPipe, NumPy, PostgreSQL, psycopg2[cite: 13]</div>
+                        <div class="item-details">
+                            Engineered a real-time pose estimation system using OpenCV and MediaPipe to extract 33 3D landmarks and calculate 3-point joint angles, integrated with a Finite State Machine (FSM) for multi-exercise auto-switching and repetition tracking[cite: 13]. Built automated session logging into PostgreSQL via <code>psycopg2</code> to store spatial metrics, reps, and analytics[cite: 13].
+                            <br><a href="https://github.com/minahiliftikhar14/Gym-Pose-Detector-AutoSwitch.git" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> github.com/minahiliftikhar14/Gym-Pose-Detector-AutoSwitch.git</a>[cite: 13]
+                        </div>
                     </div>
 
                     <div class="item">
-                        <div class="item-header">ML Algorithm and Image Segmentation</div>
-                        <div class="item-details">Implementations of K-NN Classification, K-Means Clustering, and OpenCV Color Image Segmentation in Python.</div>
+                        <div class="item-header">Cost-Optimal Software Rejuvenation Framework for Real-Time ML Infrastructure</div>
+                        <div class="item-sub">Python, Streamlit, Dynamic Programming (MDP/Bellman), NumPy, SciPy, Matplotlib[cite: 13]</div>
+                        <div class="item-details">
+                            Engineered a dual-component decision engine with a telemetry classifier for operational drift and an MDP/Bellman solver (&gamma; = 0.90) for preventive rejuvenation schedules[cite: 13]. Formulated discrete state-space transitions via Dynamic Programming to minimize cumulative failure costs, integrated with a 15-step Streamlit simulator for live trajectory visualization[cite: 13].
+                            <br><a href="https://github.com/minahiliftikhar14/cost-optimal-software-rejuvenation.git" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> github.com/minahiliftikhar14/cost-optimal-software-rejuvenation.git</a>[cite: 13]
+                        </div>
                     </div>
+
                     <div class="item">
-                    <div class="item-header">Interactive Rock Paper Scissors Game</div>
-                    <div class="item-details">Developed a console-based interactive game in C++ implementing Object-Oriented Programming (OOP) principles, modular logic, and dynamic state evaluation.</div>
-</div>
+                        <div class="item-header">Machine Learning Algorithms & Color Image Segmentation</div>
+                        <div class="item-sub">Python, OpenCV, Scikit-Learn, NumPy, Matplotlib, Pandas, Jupyter[cite: 13]</div>
+                        <div class="item-details">
+                            Implemented iterative K-Means clustering (K = 20) on RGB pixel arrays for spatial region segmentation and K-NN classification models for high-dimensional feature vectors[cite: 13]. Built an end-to-end Jupyter Notebook pipeline using Scikit-Learn and Matplotlib to extract spatial features and visualize dynamic cluster boundary transitions[cite: 13].
+                            <br><a href="https://github.com/minahiliftikhar14/ML-Algorithms-and-Image-Segmentation.git" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> github.com/minahiliftikhar14/ML-Algorithms-and-Image-Segmentation.git</a>[cite: 13]
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Training and Certifications -->
                 <section class="main-section">
-                    <h2>Certifications and Training</h2>
+                    <h2>Certifications</h2>
                     <ul class="bullet-list">
-                        <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/G35MRL6P6E2B" target="_blank">Cybersecurity Specialization</a> (Coursera)</li>
-                        <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/XSZ6174ZWD91" target="_blank">Google UX Design Specialization</a> (Coursera)</li>
-                         <li><a href="https://www.coursera.org/account/accomplishments/certificate/RXL51QX4BG8D" target="_blank">Google Job Search with AI</a> (Coursera)</li>
-                        <li><a href="https://www.coursera.org/account/accomplishments/certificate/5TB5YM1CJBZL" target="_blank">Build Dynamic Website With UI</a> (Coursera)</li>
+                        <li><strong>The Nuts and Bolts of Machine Learning</strong> — Google / Coursera (12/11/2026) | <a href="https://www.coursera.org/account/accomplishments/certificate/8195MPPB6CIA" target="_blank">Verify Credential</a></li>
+                        <li><strong>Google AI Essentials Specialization</strong> — Google / Coursera (01/10/2026) | <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/PGGOQPGPL50E" target="_blank">Verify Credential</a></li>
+                        <li><strong>Google UX Design Specialization</strong> — Google / Coursera (02/08/2026) | <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/XSZ6174ZWD91" target="_blank">Verify Credential</a></li>
+                        <li><strong>Google Cybersecurity Specialization</strong> — Google / Coursera (21/07/2026) | <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/G35MRL6P6E2B" target="_blank">Verify Credential</a></li>
                     </ul>
                 </section>
             </div>
